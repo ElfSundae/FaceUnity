@@ -1,0 +1,47 @@
+PODS:
+  - ESFramework (3.21.1):
+    - ESFramework/Foundation (= 3.21.1)
+    - ESFramework/Network (= 3.21.1)
+    - ESFramework/UIKit (= 3.21.1)
+  - ESFramework/Foundation (3.21.1)
+  - ESFramework/Network (3.21.1)
+  - ESFramework/UIKit (3.21.1):
+    - ESFramework/Foundation
+    - ESFramework/Network
+  - FaceUnity (6.6.0):
+    - FaceUnity/Lite (= 6.6.0)
+  - FaceUnity/Core (6.6.0):
+    - ESFramework (~> 3.20)
+    - Masonry (~> 1.1)
+    - SVProgressHUD (~> 2.2)
+  - FaceUnity/Lite (6.6.0):
+    - FaceUnity/Core
+    - Nama-lite (= 6.6.0)
+  - Masonry (1.1.0)
+  - Nama-lite (6.6.0)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - FaceUnity (from `.`)
+
+SPEC REPOS:
+  trunk:
+    - ESFramework
+    - Masonry
+    - Nama-lite
+    - SVProgressHUD
+
+EXTERNAL SOURCES:
+  FaceUnity:
+    :path: "."
+
+SPEC CHECKSUMS:
+  ESFramework: a2c293b9e5d8a2a80ac4cb3b8e54e9e1486feab2
+  FaceUnity: 9b6cee3639a262007c046b9ae9bc0893b2343660
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Nama-lite: 2f2f5a07b24bfb0f294f4db4bd8aa65910e3dad4
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: cb1c885511eba78edb68505d297ece461850575d
+
+COCOAPODS: 1.9.1

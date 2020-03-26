@@ -1,0 +1,26 @@
+name: FaceUnity
+
+options:
+  bundleIdPrefix: com.0x123
+  createIntermediateGroups: true
+  usesTabs: false
+  indentWidth: 4
+  tabWidth: 4
+  deploymentTarget:
+    iOS: '9.0'
+
+attributes:
+  CLASSPREFIX: FU
+  ORGANIZATIONNAME: 'https://0x123.com '
+
+targets:
+  FaceUnity:
+    type: framework
+    platform: iOS
+    sources: [FaceUnity]
+    info:
+      path: Supporting Files/Info.plist
+  FaceUnityDemo:
+    type: application
+    platform: iOS
+    sources: [FaceUnityDemo]
