@@ -11,7 +11,7 @@ options:
 
 attributes:
   CLASSPREFIX: FU
-  ORGANIZATIONNAME: 'https://0x123.com '
+  ORGANIZATIONNAME: 'https://0x123.com'
 
 targets:
   FaceUnity:
