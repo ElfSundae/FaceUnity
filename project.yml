@@ -24,3 +24,5 @@ targets:
     type: application
     platform: iOS
     sources: [FaceUnityDemo]
+    settings:
+      DEVELOPMENT_TEAM: B86YZY7YJX

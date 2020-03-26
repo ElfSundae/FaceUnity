@@ -23,6 +23,6 @@ FOUNDATION_EXPORT const unsigned char FaceUnityVersionString[];
 $(cat FaceUnity/FaceUnity.h)
 EOT
 
-xcodegen
+xcodegen -c
 
 pod update "$@"
