@@ -29,3 +29,7 @@ You must use `FUSetAuthData()` to configure your FaceUnity authpack before invok
 
 FUSetAuthData(&g_auth_package, sizeof(g_auth_package));
 ```
+
+### Nama SDK documentation
+
+See [Docs](Docs/).
