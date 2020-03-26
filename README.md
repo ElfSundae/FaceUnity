@@ -1,6 +1,7 @@
 # FaceUnity
 
 ![Cocoapods](https://img.shields.io/cocoapods/v/FaceUnity)
+[![Build Status](https://travis-ci.org/ElfSundae/FaceUnity.svg)](https://travis-ci.org/ElfSundae/FaceUnity)
 
 iOS face-beautification toolkit built upon [FaceUnity](https://www.faceunity.com) Nama SDK and [FULiveDemo](https://github.com/Faceunity/FULiveDemo).
 
