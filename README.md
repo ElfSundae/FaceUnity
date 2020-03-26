@@ -6,13 +6,13 @@ iOS face-beautification toolkit built upon [FaceUnity](https://www.faceunity.com
 
 ## Installation
 
-Install the **Lite** version without physics engine:
+Install along with the lite version of Nama SDK which without physics engine:
 
 ```ruby
 pod 'FaceUnity'
 ```
 
-Or install the **Full** version:
+Or install along with the full version of Nama SDK:
 
 ```ruby
 pod 'FaceUnity/Full'
