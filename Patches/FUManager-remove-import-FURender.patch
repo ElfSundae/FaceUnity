@@ -1,0 +1,12 @@
+diff --git a/FaceUnity/FULiveDemo/Helpers/FUManager.h b/FaceUnity/FULiveDemo/Helpers/FUManager.h
+index 68e6dce3ae454b864979e179ef150f39726049fa..9e29f4569f4af861b5b12f6d7e505800489e55ab 100755
+--- a/FaceUnity/FULiveDemo/Helpers/FUManager.h
++++ b/FaceUnity/FULiveDemo/Helpers/FUManager.h
+@@ -9,7 +9,6 @@
+ #import <Foundation/Foundation.h>
+ #import <UIKit/UIKit.h>
+ #import <AVFoundation/AVFoundation.h>
+-#import "FURenderer.h"
+ #import "FUBeautyParam.h"
+ 
+ @class FULiveModel;

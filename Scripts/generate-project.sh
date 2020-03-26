@@ -12,7 +12,7 @@ cat <<EOT > FaceUnity/FaceUnity.h
 //  FaceUnity
 //
 //  Created by Elf Sundae on 2020/03/23.
-//  Copyright © 2020 https://0x123.com . All rights reserved.
+//  Copyright © 2020 https://0x123.com. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -23,6 +23,6 @@ FOUNDATION_EXPORT const unsigned char FaceUnityVersionString[];
 $(cat FaceUnity/FaceUnity.h)
 EOT
 
-xcodegen -c
+xcodegen
 
 pod update "$@"

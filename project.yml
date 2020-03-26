@@ -20,9 +20,9 @@ targets:
     sources: [FaceUnity]
     info:
       path: Supporting Files/Info.plist
-  FaceUnityDemo:
+  FaceUnityExample:
     type: application
     platform: iOS
-    sources: [FaceUnityDemo]
+    sources: [FaceUnityExample]
     settings:
       DEVELOPMENT_TEAM: B86YZY7YJX
