@@ -23,6 +23,7 @@ targets:
   FaceUnityExample:
     type: application
     platform: iOS
+    scheme: {} # https://github.com/yonaskolb/XcodeGen/issues/215
     sources: [FaceUnityExample]
     settings:
       DEVELOPMENT_TEAM: B86YZY7YJX
