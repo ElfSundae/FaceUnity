@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name        = 'FaceUnity'
   s.version     = '0.1.0-dev'
-  s.license     = { :type => 'MIT', :file => 'LICENSE' }
+  s.license     = 'MIT'
   s.summary     = 'iOS face-beautification toolkit built upon FaceUnity Nama SDK and FULiveDemo.'
   s.homepage    = 'https://github.com/ElfSundae/FaceUnity'
   s.authors     = { 'Elf Sundae' => 'https://0x123.com' }

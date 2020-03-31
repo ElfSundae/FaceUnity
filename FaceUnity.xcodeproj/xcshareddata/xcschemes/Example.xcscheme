@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE5D7D5E678329410BFA213C"
-               BuildableName = "FaceUnityExample.app"
-               BlueprintName = "FaceUnityExample"
+               BlueprintIdentifier = "60B98F94AA96CD3AA28B960F"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
                ReferencedContainer = "container:FaceUnity.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE5D7D5E678329410BFA213C"
-            BuildableName = "FaceUnityExample.app"
-            BlueprintName = "FaceUnityExample"
+            BlueprintIdentifier = "60B98F94AA96CD3AA28B960F"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:FaceUnity.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,9 +60,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE5D7D5E678329410BFA213C"
-            BuildableName = "FaceUnityExample.app"
-            BlueprintName = "FaceUnityExample"
+            BlueprintIdentifier = "60B98F94AA96CD3AA28B960F"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:FaceUnity.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -81,9 +81,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE5D7D5E678329410BFA213C"
-            BuildableName = "FaceUnityExample.app"
-            BlueprintName = "FaceUnityExample"
+            BlueprintIdentifier = "60B98F94AA96CD3AA28B960F"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:FaceUnity.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

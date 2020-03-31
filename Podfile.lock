@@ -1,11 +1,11 @@
 PODS:
-  - ESFramework (3.21.2):
-    - ESFramework/Foundation (= 3.21.2)
-    - ESFramework/Network (= 3.21.2)
-    - ESFramework/UIKit (= 3.21.2)
-  - ESFramework/Foundation (3.21.2)
-  - ESFramework/Network (3.21.2)
-  - ESFramework/UIKit (3.21.2):
+  - ESFramework (3.22.0):
+    - ESFramework/Foundation (= 3.22.0)
+    - ESFramework/Network (= 3.22.0)
+    - ESFramework/UIKit (= 3.22.0)
+  - ESFramework/Foundation (3.22.0)
+  - ESFramework/Network (3.22.0)
+  - ESFramework/UIKit (3.22.0):
     - ESFramework/Foundation
     - ESFramework/Network
   - FaceUnity (0.1.0-dev):
@@ -36,12 +36,12 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  ESFramework: 9aa87e6a27d2e5e1d818f6e919890b6b0ce0dc05
-  FaceUnity: 1cdab2f7ea1f05130660aaa93478ffb98b5b1456
+  ESFramework: af5dfb07453406a2d5b6a6a8e2ffbaf939fa69ba
+  FaceUnity: 5a87e4bdc34a6c0a6b2e2faf750fd309e6761f9c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Nama-lite: 2f2f5a07b24bfb0f294f4db4bd8aa65910e3dad4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 64897ed416a9462aa08efdf0b366df287dd790a2
+PODFILE CHECKSUM: d0086cdcc7711b7fc7d55025f933b94169ce2a7e
 
 COCOAPODS: 1.9.1

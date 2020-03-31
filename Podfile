@@ -1,5 +1,5 @@
 platform :ios, '9.0'
 
-target 'FaceUnityExample' do
+target 'Example' do
     pod 'FaceUnity', :path => '.'
 end

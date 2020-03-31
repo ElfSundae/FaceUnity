@@ -13,17 +13,23 @@ attributes:
   CLASSPREFIX: FU
   ORGANIZATIONNAME: 'https://0x123.com'
 
+settings:
+  MARKETING_VERSION: 0.1.0-dev
+  CURRENT_PROJECT_VERSION: 1
+  # Fix warning for Xcode 11.3: Enable "Missing Localizability"
+  CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
+
 targets:
   FaceUnity:
     type: framework
     platform: iOS
-    sources: [FaceUnity]
-    info:
-      path: Supporting Files/Info.plist
-  FaceUnityExample:
+    sources:
+      - FaceUnity
+      - Supporting Files/Info.plist
+  Example:
     type: application
     platform: iOS
-    scheme: {} # https://github.com/yonaskolb/XcodeGen/issues/215
-    sources: [FaceUnityExample]
+    scheme: {} # To generate default shared schemes: https://github.com/yonaskolb/XcodeGen/issues/215
+    sources: [Example]
     settings:
       DEVELOPMENT_TEAM: B86YZY7YJX
