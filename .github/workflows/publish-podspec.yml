@@ -1,0 +1,17 @@
+name: Publish Podspec
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Publish podspec to Trunk repo
+        run: pod trunk push --allow-warnings --skip-import-validation
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
