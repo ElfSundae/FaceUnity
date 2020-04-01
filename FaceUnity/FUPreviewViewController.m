@@ -21,12 +21,8 @@
 #define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
-typedef NS_ENUM(NSInteger, FUCameraFocusModel) {
-    FUCameraModelAutoFace,
-    FUCameraModelChangeless
-};
-
-@interface FUPreviewViewController () <FUCameraDelegate, FUAPIDemoBarDelegate>
+@interface FUPreviewViewController ()
+<FUCameraDelegate, FUCameraDataSource, FUAPIDemoBarDelegate>
 {
     float imageW;
     float imageH;
@@ -38,7 +34,6 @@ typedef NS_ENUM(NSInteger, FUCameraFocusModel) {
 
 @property (nonatomic, assign) int orientation;
 @property (nonatomic, strong) CMMotionManager *motionManager;
-@property (nonatomic) FUCameraFocusModel cameraFocusModel;
 
 @property (strong, nonatomic) FUAPIDemoBar *demoBar;
 
@@ -83,7 +78,6 @@ typedef NS_ENUM(NSInteger, FUCameraFocusModel) {
 
     //重置曝光值为0
     [self.mCamera setExposureValue:0];
-    _cameraFocusModel = FUCameraModelAutoFace;
     // [self setupLightingValue];
     /* 道具切信号 */
     // signal = dispatch_semaphore_create(1);
@@ -108,23 +102,11 @@ typedef NS_ENUM(NSInteger, FUCameraFocusModel) {
     /* 监听屏幕方向 */
     [self startListeningDirectionOfDevice];
 
-    dispatch_async([FUManager shareManager].asyncLoadQueue, ^{
-        int handle = [[FUManager shareManager] getHandleAboutType:FUNamaHandleTypeBeauty];
-        /* 单独美颜点位点位*/
-        [FURenderer itemSetParam:handle withName:@"landmarks_type" value:@(FUAITYPE_FACEPROCESSOR)];
-    });
-
     [_demoBar reloadShapView:[FUManager shareManager].shapeParams];
     [_demoBar reloadSkinView:[FUManager shareManager].skinParams];
     [_demoBar reloadFilterView:[FUManager shareManager].filters];
 
     [_demoBar setDefaultFilter:[FUManager shareManager].seletedFliter];
-
-    dispatch_async([FUManager shareManager].asyncLoadQueue, ^{
-        int handle = [[FUManager shareManager] getHandleAboutType:FUNamaHandleTypeBeauty];
-        /* 单独美颜点位点位*/
-        [FURenderer itemSetParam:handle withName:@"landmarks_type" value:@(FUAITYPE_FACELANDMARKS75)];
-    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -144,7 +126,7 @@ typedef NS_ENUM(NSInteger, FUCameraFocusModel) {
 - (void)touchScreenAction:(UITapGestureRecognizer *)tap
 {
     if (tap.view == self.renderView) {
-        _cameraFocusModel = FUCameraModelChangeless;
+        [self.mCamera cameraChangeModle:FUCameraModelChangeless];
         CGPoint center = [tap locationInView:self.renderView];
 
         if (self.renderView.contentMode == FUOpenGLViewContentModeScaleToFill) {
@@ -183,13 +165,13 @@ typedef NS_ENUM(NSInteger, FUCameraFocusModel) {
     if (!_mCamera) {
         _mCamera = [[FUCamera alloc] init];
         _mCamera.delegate = self;
+        _mCamera.dataSource = self;
     }
     return _mCamera;
 }
 
 #pragma mark - FUCameraDelegate
 
-static int faceframe = 60;
 - (void)didOutputVideoSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
@@ -197,36 +179,26 @@ static int faceframe = 60;
     imageH = CVPixelBufferGetHeight(pixelBuffer);
     [[FUManager shareManager] renderItemsToPixelBuffer:pixelBuffer];
 
-    [self cameraFocusAndExpose];
-
     [self.renderView displayPixelBuffer:pixelBuffer];
+
+    //    [self.renderView displayPixelBuffer:pixelBuffer withLandmarks:cetera count:2 MAX:NO];
+    //    static float posterLandmarks[239* 2];
+    //    [FURenderer getFaceInfo:0 name:@"landmarks" pret:posterLandmarks number:239* 2];
+    //    [self.renderView displayPixelBuffer:pixelBuffer withLandmarks:posterLandmarks count:239* 2 MAX:NO];
 }
 
-- (void)cameraSubjectAreaDidChange
-{
-    _cameraFocusModel = FUCameraModelAutoFace;
-}
+#pragma mark - FUCameraDataSource
+-(CGPoint)faceCenterInImage:(FUCamera *)camera{
+    CGPoint center = CGPointMake(-1, -1);
+    BOOL isHaveFace = [[FUManager shareManager] isTracking];
 
-#pragma mark -  人脸曝光逻辑
-//主题区域发生了变化，60帧人脸检测对焦人脸
-- (void)cameraFocusAndExpose
-{
-    if (_cameraFocusModel == FUCameraModelAutoFace) {
-        BOOL isHaveFace = [[FUManager shareManager] isTracking];
-        if (isHaveFace) {
-            [self cameraFocusAndExposeFace];
-        }
-        faceframe--;
-        if (faceframe == 0) {
-            faceframe = 60;
-            _cameraFocusModel = FUCameraModelChangeless;
-            NSLog(@"------取消人脸对焦----");
-        }
+    if (isHaveFace) {
+        center = [self cameraFocusAndExposeFace];
     }
+    return center;
 }
 
-- (void)cameraFocusAndExposeFace
-{
+-(CGPoint)cameraFocusAndExposeFace{
     NSLog(@"------人脸对焦----");
     static float posterLandmarks[239 * 2];
     int ret = [FURenderer getFaceInfo:0 name:@"landmarks" pret:posterLandmarks number:75 * 2];
@@ -239,10 +211,7 @@ static int faceframe = 60;
 
     CGPoint center = [self getCenterFromeLandmarks:posterLandmarks];
 
-    if (center.y > 0) {
-        CGPoint point = CGPointMake(center.y / imageH, self.mCamera.isFrontCamera ? center.x / imageW : 1 - center.x / imageW);
-        [self.mCamera focusWithMode:AVCaptureFocusModeContinuousAutoFocus exposeWithMode:AVCaptureExposureModeContinuousAutoExposure atDevicePoint:point monitorSubjectAreaChange:YES];
-    }
+    return  CGPointMake(center.y/imageH, self.mCamera.isFrontCamera ? center.x/imageW : 1 - center.x/imageW);
 }
 
 
@@ -280,7 +249,6 @@ static int faceframe = 60;
 {
     if (self.navigationController.visibleViewController == self) {
         [self.mCamera startCapture];
-        _cameraFocusModel = FUCameraModelAutoFace;
     }
 }
 

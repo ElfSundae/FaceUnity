@@ -1,0 +1,34 @@
+diff --git a/FaceUnity/FULiveDemo/Helpers/FUManager.m b/FaceUnity/FULiveDemo/Helpers/FUManager.m
+index bceb3a58e826f6df402940753dbd0e148c56ab26..5dbc651a0db95bc2455a57a8dc68b5ec61e175bd 100755
+--- a/FaceUnity/FULiveDemo/Helpers/FUManager.m
++++ b/FaceUnity/FULiveDemo/Helpers/FUManager.m
+@@ -8,7 +8,7 @@
+ 
+ #import "FUManager.h"
+ #import "FURenderer.h"
+-#import "authpack.h"
++#import "FUAuthData.h"
+ #import "FULiveModel.h"
+ #import <sys/utsname.h>
+ #import <CoreMotion/CoreMotion.h>
+@@ -59,7 +59,7 @@ static FUManager *shareManager = NULL;
+         _asyncLoadQueue = dispatch_queue_create("com.faceLoadItem", DISPATCH_QUEUE_SERIAL);
+         /**这里新增了一个参数shouldCreateContext，设为YES的话，不用在外部设置context操作，我们会在内部创建并持有一个context。
+          还有设置为YES,则需要调用FURenderer.h中的接口，不能再调用funama.h中的接口。*/
+-        [[FURenderer shareRenderer] setupWithData:nil dataSize:0 ardata:nil authPackage:&g_auth_package authSize:sizeof(g_auth_package) shouldCreateContext:YES];
++        [[FURenderer shareRenderer] setupWithData:nil dataSize:0 ardata:nil authPackage:FUGetAuthData() authSize:FUGetAuthDataLength() shouldCreateContext:YES];
+         
+         /* 加载AI模型 */
+         [self loadAIModle];
+diff --git a/FaceUnity/FULiveDemo/Helpers/FUManager.h b/FaceUnity/FULiveDemo/Helpers/FUManager.h
+index 68e6dce3ae454b864979e179ef150f39726049fa..9e29f4569f4af861b5b12f6d7e505800489e55ab 100755
+--- a/FaceUnity/FULiveDemo/Helpers/FUManager.h
++++ b/FaceUnity/FULiveDemo/Helpers/FUManager.h
+@@ -9,7 +9,6 @@
+ #import <Foundation/Foundation.h>
+ #import <UIKit/UIKit.h>
+ #import <AVFoundation/AVFoundation.h>
+-#import "FURenderer.h"
+ #import "FUBeautyParam.h"
+ 
+ @class FULiveModel;
