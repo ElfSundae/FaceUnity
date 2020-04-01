@@ -25,7 +25,8 @@ jobs:
 
       - name: Build Example Project
         run: |
-          set -o pipefail && xcodebuild clean build \
+          set -o pipefail
+          xcodebuild clean build \
             -workspace FaceUnity.xcworkspace -scheme Example \
             -configuration Release CODE_SIGN_IDENTITY=- \
             -sdk iphonesimulator | xcpretty -c
