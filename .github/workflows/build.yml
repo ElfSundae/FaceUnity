@@ -7,4 +7,17 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Cache CocoaPods Repos
+        uses: actions/cache@v1
+        with:
+          path: ~/.cocoapods
+          key: ${{ runner.os }}-cocoapods-repos
+
+      - name: Cache CocoaPods Pods
+        uses: actions/cache@v1
+        with:
+          path: ~/Library/Caches/CocoaPods
+          key: ${{ runner.os }}-cocoapods-pods
+
       - run: pod lib lint --allow-warnings --skip-import-validation
