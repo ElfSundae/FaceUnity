@@ -20,4 +20,14 @@ jobs:
           path: ~/Library/Caches/CocoaPods
           key: ${{ runner.os }}-cocoapods-pods
 
-      - run: pod lib lint --allow-warnings --skip-import-validation
+      - name: Install Dependencies
+        run: pod install --repo-update
+
+      - name: Build Example Project
+        run: |
+          xcodebuild clean build -workspace FaceUnity.xcworkspace \
+            -scheme Example -configuration Release \
+            CODE_SIGN_IDENTITY=- -sdk iphonesimulator | xcpretty -c
+
+      - name: Lint Pod
+        run: pod lib lint --allow-warnings --skip-import-validation
