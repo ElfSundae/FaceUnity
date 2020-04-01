@@ -32,4 +32,5 @@ targets:
     scheme: {} # To generate default shared schemes: https://github.com/yonaskolb/XcodeGen/issues/215
     sources: [Example]
     settings:
+      ARCHS: $(ARCHS_STANDARD_64_BIT)
       DEVELOPMENT_TEAM: B86YZY7YJX
