@@ -1,8 +1,8 @@
 # FaceUnity
 
 [![Build status](https://github.com/ElfSundae/FaceUnity/workflows/Build/badge.svg)](https://github.com/ElfSundae/FaceUnity/actions?query=workflow%3ABuild)
-![Cocoapods](https://img.shields.io/cocoapods/v/FaceUnity)
-![Cocoapods platforms](https://img.shields.io/cocoapods/p/FaceUnity)
+![CocoaPods](https://img.shields.io/cocoapods/v/FaceUnity)
+![CocoaPods platforms](https://img.shields.io/cocoapods/p/FaceUnity)
 
 iOS face-beautification toolkit built upon [FaceUnity](https://www.faceunity.com) Nama SDK and [FULiveDemo](https://github.com/Faceunity/FULiveDemo).
 
