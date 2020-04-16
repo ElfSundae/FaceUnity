@@ -14,7 +14,7 @@ attributes:
   ORGANIZATIONNAME: 'https://0x123.com'
 
 settings:
-  MARKETING_VERSION: 0.1.0-dev
+  MARKETING_VERSION: 0.1.0
   CURRENT_PROJECT_VERSION: 1
   # Fix warning for Xcode 11.3: Enable "Missing Localizability"
   CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
