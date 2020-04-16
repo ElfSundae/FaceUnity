@@ -27,13 +27,15 @@ Pod::Spec.new do |s|
 
   s.subspec 'Lite' do |ss|
     ss.source_files = 'FaceUnity/**/*.{h,m}'
+
     ss.dependency 'FaceUnity/Core'
-    ss.dependency 'Nama-lite', '6.6.0'
+    ss.dependency 'Nama-lite', '6.7.0'
   end
 
   s.subspec 'Full' do |ss|
     ss.source_files = 'FaceUnity/**/*.{h,m}'
+
     ss.dependency 'FaceUnity/Core'
-    ss.dependency 'Nama', '6.6.0'
+    ss.dependency 'Nama', '6.7.0'
   end
 end
