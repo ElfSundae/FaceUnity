@@ -9,53 +9,85 @@
 /* Begin PBXBuildFile section */
 		04DFE7FEF38D5B711885B076 /* dataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C37E6B957C33BDCDE7178 /* dataSource.plist */; };
 		0576E41D82396E134C5A067D /* FUAPIDemoBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2F6ED025E5CC565CC1DFF1 /* FUAPIDemoBar.xib */; };
-		0844C22638C09D417C1FAB9C /* FaceUnity.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDCC84A02903E514B336829 /* FaceUnity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C08D82CEED179E7478ABD25 /* FUSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D473D505335A752A8483F7 /* FUSquareButton.m */; };
+		179CEA6BCDBBF8C2209C176E /* NSBundle+FaceUnity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADCC28AACB17D4A91FD84348 /* NSBundle+FaceUnity.h */; };
 		23099E4C930B217A2ADAEB2F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37231656C54E2AF4AC371077 /* Media.xcassets */; };
 		276CAD9FA515814B8E0629AF /* FULiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F34C6AB2E6E6E4E11A0816F /* FULiveModel.m */; };
-		27CBBE45586EFC62E8D218BE /* FUAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F06C54ED6D3C6324D35EF7 /* FUAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34AE962E84694BEA245E5CCB /* FUOpenGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 525939AA1765A9CC5BE70056 /* FUOpenGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36AB74DC9369CC5E2177408E /* FUFilterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 957E39D7B6FF536C0FF874E9 /* FUFilterView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		279025EAE567B753C015B55D /* FUPreviewViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9AFDE1E2046EE4C57FD4D936 /* FUPreviewViewController.h */; };
 		3E1F67777CBB402C2D79D2AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCC1C5CD5B91869ACFEC1BA /* main.m */; };
+		3F785349E341727DF3F1C83D /* FUBeautyParam.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A033D9477AA2BF0218F70BE /* FUBeautyParam.h */; };
 		40D6545A34BE6C2A6F554566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4EE104CFC32915AAC014639 /* Assets.xcassets */; };
-		41F688596506404FB44A01F5 /* FUBeautyParam.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A033D9477AA2BF0218F70BE /* FUBeautyParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41567482276C7AA064404153 /* FUManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADBA4D03C41807CC058CDB4C /* FUManager.h */; };
 		4260B9A7B44D61E26FDC818F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AD6B8D958E138658B0F85 /* AppDelegate.m */; };
 		42CADCD7C0EC0BDC9C3E7DA3 /* FUAPIDemoBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDED30B45881BA6174AAFEA /* FUAPIDemoBar.m */; };
-		430AC7CA65ED99AB0A05C8EE /* FUPreviewViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AFDE1E2046EE4C57FD4D936 /* FUPreviewViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47C7D8A98E4966CC45358FE4 /* UIImage+demobar.h in Headers */ = {isa = PBXBuildFile; fileRef = EBCD9D60ECCDD74F404BD93D /* UIImage+demobar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4579A963803C28A610F3CFCA /* FUDemoBarDefine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B6E25B17D41DB67DC31A465 /* FUDemoBarDefine.h */; };
+		45DAC051640056B202910242 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C947CA7297A713153C23C4 /* libPods-Example.a */; };
 		4D57FCC548359AF065FC84E7 /* FUBeautyParam.m in Sources */ = {isa = PBXBuildFile; fileRef = D25082F05B7D08D476505A01 /* FUBeautyParam.m */; };
+		4D93DD83C63486260D425E9E /* FUSlider.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 67CF4FFE5D2158D299CB2A7C /* FUSlider.h */; };
 		4EDC93D48C1A3B7F66511A61 /* FUOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1CE3234695A211D96AA4D /* FUOpenGLView.m */; };
-		5291ECDFE0175AC42C05F85D /* UIColor+FUAPIDemoBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DF7EBAB426BD62C1B9AB1A /* UIColor+FUAPIDemoBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AEBB62C6A1BD347CA5333CA /* UIColor+FUAPIDemoBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D95B3CFF2BC856492ED7B80B /* UIColor+FUAPIDemoBar.m */; };
-		61505CCC72E36A58B9554240 /* FUMusicPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 996139A843F55B8A43191631 /* FUMusicPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69510D6787EB7B49930CD3A1 /* FUSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA6DFB1CC0358009505596B /* FUSlider.m */; };
+		69E427EBB2FA83F9EAAFE8F1 /* FUImageHelper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22BBAC5A07D72E15FF7EFF8B /* FUImageHelper.h */; };
 		6A181E59997B7CAEBF1604DB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B376719EFE6A3C52111422F /* MainViewController.m */; };
+		7FDAA328CCDC2B39EE96F652 /* FUSquareButton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FED2CC836F88290CECB03634 /* FUSquareButton.h */; };
+		7FF633850EB785AEF2D97EE2 /* UIImage+demobar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EBCD9D60ECCDD74F404BD93D /* UIImage+demobar.h */; };
 		8093ED2283C3C8F27C476B2C /* FUImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4E60F27D246C48CBC8C526 /* FUImageHelper.m */; };
-		84189F0341AFD434764CA5D1 /* FURecordEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A4F38564BBAC81A9C150569 /* FURecordEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		884791FA858AD3FB23B19226 /* FUSquareButton.h in Headers */ = {isa = PBXBuildFile; fileRef = FED2CC836F88290CECB03634 /* FUSquareButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84EC027F362DFDDFAA141A4B /* UIColor+FUAPIDemoBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 61DF7EBAB426BD62C1B9AB1A /* UIColor+FUAPIDemoBar.h */; };
 		9414E9E4FE91D9262F23048C /* FUFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A901305A6471317A386A5538 /* FUFilterView.m */; };
-		971AF2A12367C18C9D1EF243 /* FUImageHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BBAC5A07D72E15FF7EFF8B /* FUImageHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BFCE8EC9DE521208DF802B3 /* FUBeautyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B447D0A6E06952132E7904 /* FUBeautyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C00EFEE7BC9F320F79671DE /* FUAPIDemoBar+FUFixNibLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A36A02790A8CC03990D34F30 /* FUAPIDemoBar+FUFixNibLocation.m */; };
-		A1D09CB7D0231703AF4046D9 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D9482C55EB0408C82D9604 /* libPods-Example.a */; };
 		A94ED5723DF6EF6F90AD5027 /* NSBundle+FaceUnity.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D28C3677E054A2D07F83F6 /* NSBundle+FaceUnity.m */; };
-		AC884FAD0632AB0C06114DCA /* FUSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 67CF4FFE5D2158D299CB2A7C /* FUSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE0951F988718E461C2C8647 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE870CD263054B9A34D0DC34 /* LaunchScreen.storyboard */; };
 		B04BD1655B8F39D85B7355BA /* FURecordEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFF642A48835B748DE7C883 /* FURecordEncoder.m */; };
+		B0FC1DA8667D4B925205E21A /* FURecordEncoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A4F38564BBAC81A9C150569 /* FURecordEncoder.h */; };
+		B188B9BFFC0DDD0A331383B7 /* FUCamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98C50C7F4567F943539D8EBD /* FUCamera.h */; };
 		B19B4C0A4EFE3320260B6608 /* FUManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7835601002E4E0BAA27C6DF /* FUManager.m */; };
 		B406E9A67C34E11C9AA9D811 /* FUCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A26CCA57EEFE42D0A33BBF9 /* FUCamera.m */; };
 		B6072F676DB20B2898248CF2 /* FUAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = E403DF82AAFAB0209DED0B4F /* FUAuthData.m */; };
 		B751E1E683BD1B604A1DAAF9 /* FUMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE746C55F1880E684A17D4E /* FUMusicPlayer.m */; };
-		C21C86915306AB69EA8BE402 /* FUManager.h in Headers */ = {isa = PBXBuildFile; fileRef = ADBA4D03C41807CC058CDB4C /* FUManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B98C5DD49239D22123498E45 /* FaceUnity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AEDCC84A02903E514B336829 /* FaceUnity.h */; };
+		BA0F52E965F24FBAB9D8E20D /* FUBeautyView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 47B447D0A6E06952132E7904 /* FUBeautyView.h */; };
 		C36B10601FA7BCFEB4D04186 /* FUPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4587F8B83D4475E46F684A /* FUPreviewViewController.m */; };
-		D7CC70D4E3E7454AF34A0A82 /* FUAPIDemoBar.h in Headers */ = {isa = PBXBuildFile; fileRef = C40FA7456962F6360BEB7AD3 /* FUAPIDemoBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E31906F65698D5793E5087EB /* FUDemoBarDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6E25B17D41DB67DC31A465 /* FUDemoBarDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7E5FFC086AA4F6F99CF7299 /* FUCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 98C50C7F4567F943539D8EBD /* FUCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA75FA2B579C39BEF390A177 /* FULiveModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C6295523C84192E2F231FD1 /* FULiveModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F21771A68BFF62CD11681248 /* NSBundle+FaceUnity.h in Headers */ = {isa = PBXBuildFile; fileRef = ADCC28AACB17D4A91FD84348 /* NSBundle+FaceUnity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB76E773B742753C604A69A6 /* FUAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F0F06C54ED6D3C6324D35EF7 /* FUAuthData.h */; };
+		CD970BFC9F5444597A527A2C /* FUAPIDemoBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C40FA7456962F6360BEB7AD3 /* FUAPIDemoBar.h */; };
+		DA74998CE502CA25479D5972 /* FULiveModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C6295523C84192E2F231FD1 /* FULiveModel.h */; };
+		ECBACCA23B4941D702058B61 /* FUOpenGLView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 525939AA1765A9CC5BE70056 /* FUOpenGLView.h */; };
 		F31B3825BB8EF933433AB738 /* FUBeautyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D66AA8DAF7AE3B826FEA18 /* FUBeautyView.m */; };
+		F9B7A68E328A1DA250CA7F22 /* FUMusicPlayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 996139A843F55B8A43191631 /* FUMusicPlayer.h */; };
 		FC90740266B111D09A095C0A /* UIImage+demobar.m in Sources */ = {isa = PBXBuildFile; fileRef = B690309CDB01804BFEDF3144 /* UIImage+demobar.m */; };
+		FFF04A380EF85F86709282DA /* FUFilterView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 957E39D7B6FF536C0FF874E9 /* FUFilterView.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E6AA5765DB68782504A89642 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CD970BFC9F5444597A527A2C /* FUAPIDemoBar.h in CopyFiles */,
+				CB76E773B742753C604A69A6 /* FUAuthData.h in CopyFiles */,
+				3F785349E341727DF3F1C83D /* FUBeautyParam.h in CopyFiles */,
+				BA0F52E965F24FBAB9D8E20D /* FUBeautyView.h in CopyFiles */,
+				B188B9BFFC0DDD0A331383B7 /* FUCamera.h in CopyFiles */,
+				4579A963803C28A610F3CFCA /* FUDemoBarDefine.h in CopyFiles */,
+				FFF04A380EF85F86709282DA /* FUFilterView.h in CopyFiles */,
+				69E427EBB2FA83F9EAAFE8F1 /* FUImageHelper.h in CopyFiles */,
+				DA74998CE502CA25479D5972 /* FULiveModel.h in CopyFiles */,
+				41567482276C7AA064404153 /* FUManager.h in CopyFiles */,
+				F9B7A68E328A1DA250CA7F22 /* FUMusicPlayer.h in CopyFiles */,
+				ECBACCA23B4941D702058B61 /* FUOpenGLView.h in CopyFiles */,
+				279025EAE567B753C015B55D /* FUPreviewViewController.h in CopyFiles */,
+				B0FC1DA8667D4B925205E21A /* FURecordEncoder.h in CopyFiles */,
+				4D93DD83C63486260D425E9E /* FUSlider.h in CopyFiles */,
+				7FDAA328CCDC2B39EE96F652 /* FUSquareButton.h in CopyFiles */,
+				B98C5DD49239D22123498E45 /* FaceUnity.h in CopyFiles */,
+				179CEA6BCDBBF8C2209C176E /* NSBundle+FaceUnity.h in CopyFiles */,
+				84EC027F362DFDDFAA141A4B /* UIColor+FUAPIDemoBar.h in CopyFiles */,
+				7FF633850EB785AEF2D97EE2 /* UIImage+demobar.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C7FC9A585AE1432E9B2AD6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FUAPIDemoBar.xib; sourceTree = "<group>"; };
@@ -72,11 +104,11 @@
 		4EF1CE3234695A211D96AA4D /* FUOpenGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUOpenGLView.m; sourceTree = "<group>"; };
 		525939AA1765A9CC5BE70056 /* FUOpenGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUOpenGLView.h; sourceTree = "<group>"; };
 		569435E63F9EE65C8C2720E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5933E360AF6C9A8CE7F7D779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A033D9477AA2BF0218F70BE /* FUBeautyParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUBeautyParam.h; sourceTree = "<group>"; };
 		5B376719EFE6A3C52111422F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		61DF7EBAB426BD62C1B9AB1A /* UIColor+FUAPIDemoBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+FUAPIDemoBar.h"; sourceTree = "<group>"; };
-		62D9482C55EB0408C82D9604 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62453E88039A73AE69308926 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		624FBEC61C1C68A1677E6220 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		67CF4FFE5D2158D299CB2A7C /* FUSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUSlider.h; sourceTree = "<group>"; };
 		6F34C6AB2E6E6E4E11A0816F /* FULiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FULiveModel.m; sourceTree = "<group>"; };
 		6F4587F8B83D4475E46F684A /* FUPreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUPreviewViewController.m; sourceTree = "<group>"; };
@@ -97,19 +129,18 @@
 		AEDCC84A02903E514B336829 /* FaceUnity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceUnity.h; sourceTree = "<group>"; };
 		AEFF642A48835B748DE7C883 /* FURecordEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FURecordEncoder.m; sourceTree = "<group>"; };
 		B2E4F1A48B8C811180B74F52 /* authpack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = authpack.h; sourceTree = "<group>"; };
-		B527ED4BD76147C4C77A79B0 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B690309CDB01804BFEDF3144 /* UIImage+demobar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+demobar.m"; sourceTree = "<group>"; };
-		BC6404678FF2E10716FA2FA6 /* FaceUnity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FaceUnity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40FA7456962F6360BEB7AD3 /* FUAPIDemoBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUAPIDemoBar.h; sourceTree = "<group>"; };
 		C4EE104CFC32915AAC014639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C712B4A22B68EAEA136CB833 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		CCDED30B45881BA6174AAFEA /* FUAPIDemoBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUAPIDemoBar.m; sourceTree = "<group>"; };
 		D25082F05B7D08D476505A01 /* FUBeautyParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyParam.m; sourceTree = "<group>"; };
 		D2D28C3677E054A2D07F83F6 /* NSBundle+FaceUnity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+FaceUnity.m"; sourceTree = "<group>"; };
+		D5C947CA7297A713153C23C4 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7835601002E4E0BAA27C6DF /* FUManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUManager.m; sourceTree = "<group>"; };
 		D8F5B23B2ECF891779FCE856 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		D95B3CFF2BC856492ED7B80B /* UIColor+FUAPIDemoBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FUAPIDemoBar.m"; sourceTree = "<group>"; };
 		E403DF82AAFAB0209DED0B4F /* FUAuthData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUAuthData.m; sourceTree = "<group>"; };
+		E6B4EA2E9E193A3005D345D3 /* FaceUnity.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = FaceUnity.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCD9D60ECCDD74F404BD93D /* UIImage+demobar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+demobar.h"; sourceTree = "<group>"; };
 		F0F06C54ED6D3C6324D35EF7 /* FUAuthData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUAuthData.h; sourceTree = "<group>"; };
 		F83AC77047175F4054514376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -118,18 +149,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		668B887E3317924AB79E8974 /* Frameworks */ = {
+		597E9119E33BFEA81357D8C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DAC051640056B202910242 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A64C8E3B07189891A3FA2E7 /* Frameworks */ = {
+		83B42BDDDBFE05E3E7A8537F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1D09CB7D0231703AF4046D9 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,10 +192,9 @@
 			children = (
 				30512840D24CE5D5B9B49CBC /* Example */,
 				C559176FDA64D75472A61F25 /* FaceUnity */,
-				65F7CD01DE4BEF15F88FD819 /* Supporting Files */,
 				D2EB07C15D84123F7B130FE9 /* Products */,
-				BECF2B21AEE33DA905C20699 /* Pods */,
-				A9B7173EFBF4648D415BE034 /* Frameworks */,
+				B919B7917A7AF0B2866B6C5D /* Pods */,
+				2BEAB7A4DF802061DF1C3AF5 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -210,6 +240,14 @@
 			path = Beauty;
 			sourceTree = "<group>";
 		};
+		2BEAB7A4DF802061DF1C3AF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5C947CA7297A713153C23C4 /* libPods-Example.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		30512840D24CE5D5B9B49CBC /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,14 +272,6 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		65F7CD01DE4BEF15F88FD819 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5933E360AF6C9A8CE7F7D779 /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		6F5DC1C91BCC3B5AADEA6767 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,19 +283,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A9B7173EFBF4648D415BE034 /* Frameworks */ = {
+		B919B7917A7AF0B2866B6C5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				62D9482C55EB0408C82D9604 /* libPods-Example.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BECF2B21AEE33DA905C20699 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B527ED4BD76147C4C77A79B0 /* Pods-Example.debug.xcconfig */,
-				C712B4A22B68EAEA136CB833 /* Pods-Example.release.xcconfig */,
+				62453E88039A73AE69308926 /* Pods-Example.debug.xcconfig */,
+				624FBEC61C1C68A1677E6220 /* Pods-Example.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -293,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				F9F7C5583836122EDDA27046 /* Example.app */,
-				BC6404678FF2E10716FA2FA6 /* FaceUnity.framework */,
+				E6B4EA2E9E193A3005D345D3 /* FaceUnity.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,45 +347,15 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		7373A3871DAD4AF573E33090 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D7CC70D4E3E7454AF34A0A82 /* FUAPIDemoBar.h in Headers */,
-				27CBBE45586EFC62E8D218BE /* FUAuthData.h in Headers */,
-				41F688596506404FB44A01F5 /* FUBeautyParam.h in Headers */,
-				9BFCE8EC9DE521208DF802B3 /* FUBeautyView.h in Headers */,
-				E7E5FFC086AA4F6F99CF7299 /* FUCamera.h in Headers */,
-				E31906F65698D5793E5087EB /* FUDemoBarDefine.h in Headers */,
-				36AB74DC9369CC5E2177408E /* FUFilterView.h in Headers */,
-				971AF2A12367C18C9D1EF243 /* FUImageHelper.h in Headers */,
-				EA75FA2B579C39BEF390A177 /* FULiveModel.h in Headers */,
-				C21C86915306AB69EA8BE402 /* FUManager.h in Headers */,
-				61505CCC72E36A58B9554240 /* FUMusicPlayer.h in Headers */,
-				34AE962E84694BEA245E5CCB /* FUOpenGLView.h in Headers */,
-				430AC7CA65ED99AB0A05C8EE /* FUPreviewViewController.h in Headers */,
-				84189F0341AFD434764CA5D1 /* FURecordEncoder.h in Headers */,
-				AC884FAD0632AB0C06114DCA /* FUSlider.h in Headers */,
-				884791FA858AD3FB23B19226 /* FUSquareButton.h in Headers */,
-				0844C22638C09D417C1FAB9C /* FaceUnity.h in Headers */,
-				F21771A68BFF62CD11681248 /* NSBundle+FaceUnity.h in Headers */,
-				5291ECDFE0175AC42C05F85D /* UIColor+FUAPIDemoBar.h in Headers */,
-				47C7D8A98E4966CC45358FE4 /* UIImage+demobar.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		1F4EF092D999935E4786239C /* FaceUnity */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 484DE055B517BB0D919EEA29 /* Build configuration list for PBXNativeTarget "FaceUnity" */;
 			buildPhases = (
-				7373A3871DAD4AF573E33090 /* Headers */,
+				E6AA5765DB68782504A89642 /* CopyFiles */,
 				836D50DBD3F38B26F230BAE0 /* Sources */,
 				05656B46553D490F2A7A8B7F /* Resources */,
-				668B887E3317924AB79E8974 /* Frameworks */,
+				83B42BDDDBFE05E3E7A8537F /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,18 +363,18 @@
 			);
 			name = FaceUnity;
 			productName = FaceUnity;
-			productReference = BC6404678FF2E10716FA2FA6 /* FaceUnity.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = E6B4EA2E9E193A3005D345D3 /* FaceUnity.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		60B98F94AA96CD3AA28B960F /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D9BC21BAC5EED49D00C08E /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				96518D8F7CBF8A29A135AB9A /* [CP] Check Pods Manifest.lock */,
+				39685869065385921C941293 /* [CP] Check Pods Manifest.lock */,
 				42013E6D41CA406CD04A704A /* Sources */,
 				EF614F5BC404B5DBA98D518D /* Resources */,
-				9A64C8E3B07189891A3FA2E7 /* Frameworks */,
-				C8957578D2AEB03B96A7F5E8 /* [CP] Copy Pods Resources */,
+				597E9119E33BFEA81357D8C6 /* Frameworks */,
+				AB0F6052932FD5D0B16D11E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,7 +441,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		96518D8F7CBF8A29A135AB9A /* [CP] Check Pods Manifest.lock */ = {
+		39685869065385921C941293 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -471,7 +463,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8957578D2AEB03B96A7F5E8 /* [CP] Copy Pods Resources */ = {
+		AB0F6052932FD5D0B16D11E6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -552,29 +544,21 @@
 		1FFA0A81836D1D0CDF007D69 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.0x123.FaceUnity;
+				PRODUCT_NAME = "FaceUnity-iOS";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		212F8EB28261FEB32947A90F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B527ED4BD76147C4C77A79B0 /* Pods-Example.debug.xcconfig */;
+			baseConfigurationReference = 62453E88039A73AE69308926 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -593,7 +577,7 @@
 		};
 		2E3023752F42BF3C9269BD75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C712B4A22B68EAEA136CB833 /* Pods-Example.release.xcconfig */;
+			baseConfigurationReference = 624FBEC61C1C68A1677E6220 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -731,23 +715,15 @@
 		BC39B1944384F8169C412AC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Supporting Files/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.0x123.FaceUnity;
+				PRODUCT_NAME = "FaceUnity-iOS";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

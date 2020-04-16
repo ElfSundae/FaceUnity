@@ -21,11 +21,12 @@ settings:
 
 targets:
   FaceUnity:
-    type: framework
+    type: library.static
     platform: iOS
-    sources:
-      - FaceUnity
-      - Supporting Files/Info.plist
+    sources: [FaceUnity]
+    settings:
+      PRODUCT_NAME: FaceUnity-iOS
+
   Example:
     type: application
     platform: iOS
