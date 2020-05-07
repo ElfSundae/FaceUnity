@@ -11,22 +11,22 @@
 FOUNDATION_EXPORT double FaceUnityVersionNumber;
 FOUNDATION_EXPORT const unsigned char FaceUnityVersionString[];
 
-#import <FaceUnity/FUPreviewViewController.h>
+#import <FaceUnity/FUAuthData.h>
+#import <FaceUnity/FUCamera.h>
+#import <FaceUnity/FUImageHelper.h>
+#import <FaceUnity/FUManager.h>
+#import <FaceUnity/FUMusicPlayer.h>
+#import <FaceUnity/FURecordEncoder.h>
 #import <FaceUnity/FULiveModel.h>
 #import <FaceUnity/FUOpenGLView.h>
 #import <FaceUnity/FUSquareButton.h>
-#import <FaceUnity/UIColor+FUAPIDemoBar.h>
-#import <FaceUnity/FUDemoBarDefine.h>
-#import <FaceUnity/FUBeautyView.h>
-#import <FaceUnity/FUSlider.h>
-#import <FaceUnity/FUFilterView.h>
-#import <FaceUnity/FUBeautyParam.h>
 #import <FaceUnity/FUAPIDemoBar.h>
-#import <FaceUnity/FURecordEncoder.h>
-#import <FaceUnity/FUCamera.h>
-#import <FaceUnity/FUManager.h>
-#import <FaceUnity/FUMusicPlayer.h>
-#import <FaceUnity/FUImageHelper.h>
+#import <FaceUnity/FUBeautyParam.h>
+#import <FaceUnity/FUBeautyView.h>
+#import <FaceUnity/FUDemoBarDefine.h>
+#import <FaceUnity/FUFilterView.h>
+#import <FaceUnity/FUSlider.h>
+#import <FaceUnity/UIColor+FUAPIDemoBar.h>
+#import <FaceUnity/FUPreviewViewController.h>
 #import <FaceUnity/NSBundle+FaceUnity.h>
-#import <FaceUnity/FUAuthData.h>
 #import <FaceUnity/UIImage+demobar.h>

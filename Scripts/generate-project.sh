@@ -4,8 +4,10 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 rm -f FaceUnity/FaceUnity.h
-find FaceUnity -type f -name "*.h" -exec bash -c \
-    'echo "#import <FaceUnity/$(basename {})>" >> FaceUnity/FaceUnity.h' \;
+find FaceUnity -type f -name "*.h" -print0 | sort -z \
+    | xargs -0 -I '{}' bash -c \
+    'echo "#import <FaceUnity/$(basename {})>" >> FaceUnity/FaceUnity.h'
+
 cat <<EOT > FaceUnity/FaceUnity.h
 //
 //  FaceUnity.h
