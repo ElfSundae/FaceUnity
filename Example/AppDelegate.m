@@ -21,6 +21,11 @@
 
     FUSetAuthData(&g_auth_package, sizeof(g_auth_package));
 
+    // Preload Faceunity dataSource and items.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [FUManager shareManager];
+    });
+
     [self.window makeKeyAndVisible];
     return YES;
 }
