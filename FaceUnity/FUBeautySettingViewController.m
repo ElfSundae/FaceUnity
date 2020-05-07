@@ -1,45 +1,41 @@
 //
-//  FUPreviewViewController.m
+//  FUBeautySettingViewController.m
 //  FaceUnity
 //
 //  Created by Elf Sundae on 2020/03/23.
 //  Copyright © 2020 https://0x123.com. All rights reserved.
 //
 
-#import "FUPreviewViewController.h"
+#import "FUBeautySettingViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreMotion/CoreMotion.h>
-#import <Masonry/Masonry.h>
-#import "FURenderer.h"
+#import <FURenderer.h>
 #import "FUManager.h"
 #import "FULiveModel.h"
 #import "FUCamera.h"
 #import "FUOpenGLView.h"
-#import "FUAPIDemoBar.h"
+#import "FUCaptureManager.h"
+#import "FUAPIDemoBarManager.h"
 
 #define iPhoneXStyle ((KScreenWidth == 375.f && KScreenHeight == 812.f ? YES : NO) || (KScreenWidth == 414.f && KScreenHeight == 896.f ? YES : NO))
 #define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
-@interface FUPreviewViewController ()
-<FUCameraDelegate, FUCameraDataSource, FUAPIDemoBarDelegate>
+@interface FUBeautySettingViewController () <FUCameraDelegate, FUCameraDataSource>
 {
     float imageW;
     float imageH;
 }
 
-@property (nonatomic, strong) FULiveModel *model;
 @property (nonatomic, strong) FUCamera *mCamera;
 @property (nonatomic, strong) FUOpenGLView *renderView;
 
 @property (nonatomic, assign) int orientation;
 @property (nonatomic, strong) CMMotionManager *motionManager;
 
-@property (strong, nonatomic) FUAPIDemoBar *demoBar;
-
 @end
 
-@implementation FUPreviewViewController
+@implementation FUBeautySettingViewController
 
 - (void)dealloc
 {
@@ -50,43 +46,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.view.backgroundColor = [UIColor whiteColor];
 
-    /* 美颜道具 */
-    [[FUManager shareManager] loadFilter];
-
-    /* opengl */
     self.renderView = [[FUOpenGLView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.renderView];
 
-    self.model = [FUManager shareManager].dataSource.firstObject;
-    [FUManager shareManager].currentModel = self.model;
-
-    _demoBar = [[FUAPIDemoBar alloc] init];
-    _demoBar.mDelegate = self;
-    [self.view insertSubview:_demoBar atIndex:1];
-
-    [_demoBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-        } else {
-            make.bottom.equalTo(self.view.mas_bottom);
-        }
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(49);
-    }];
-
     //重置曝光值为0
     [self.mCamera setExposureValue:0];
-    // [self setupLightingValue];
-    /* 道具切信号 */
-    // signal = dispatch_semaphore_create(1);
+
     /* 后台监听 */
     [self addObserver];
     /* 同步 */
     [[FUManager shareManager] setAsyncTrackFaceEnable:NO];
     /* 最大识别人脸数 */
-    [FUManager shareManager].enableMaxFaces = self.model.maxFace == 4;
+    [FUManager shareManager].enableMaxFaces = YES;
+
+    [FUAPIDemoBarManager.sharedManager showInView:self.view];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchScreenAction:)];
     [self.renderView addGestureRecognizer:tap];
@@ -101,12 +77,6 @@
     [self.mCamera changeSessionPreset:AVCaptureSessionPreset1280x720];
     /* 监听屏幕方向 */
     [self startListeningDirectionOfDevice];
-
-    [_demoBar reloadShapView:[FUManager shareManager].shapeParams];
-    [_demoBar reloadSkinView:[FUManager shareManager].skinParams];
-    [_demoBar reloadFilterView:[FUManager shareManager].filters];
-
-    [_demoBar setDefaultFilter:[FUManager shareManager].seletedFliter];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -188,7 +158,8 @@
 }
 
 #pragma mark - FUCameraDataSource
--(CGPoint)faceCenterInImage:(FUCamera *)camera{
+- (CGPoint)faceCenterInImage:(FUCamera *)camera
+{
     CGPoint center = CGPointMake(-1, -1);
     BOOL isHaveFace = [[FUManager shareManager] isTracking];
 
@@ -198,7 +169,8 @@
     return center;
 }
 
--(CGPoint)cameraFocusAndExposeFace{
+- (CGPoint)cameraFocusAndExposeFace
+{
     NSLog(@"------人脸对焦----");
     static float posterLandmarks[239 * 2];
     int ret = [FURenderer getFaceInfo:0 name:@"landmarks" pret:posterLandmarks number:75 * 2];
@@ -211,7 +183,7 @@
 
     CGPoint center = [self getCenterFromeLandmarks:posterLandmarks];
 
-    return  CGPointMake(center.y/imageH, self.mCamera.isFrontCamera ? center.x/imageW : 1 - center.x/imageW);
+    return CGPointMake(center.y / imageH, self.mCamera.isFrontCamera ? center.x / imageW : 1 - center.x / imageW);
 }
 
 
@@ -313,65 +285,6 @@
 {
     _orientation = orientation;
     fuSetDefaultRotationMode(orientation);
-}
-
-#pragma mark -  FUAPIDemoBarDelegate
-
-- (void)restDefaultValue:(int)type
-{
-    if (type == 1) {//美肤
-        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeSkin];
-    }
-
-    if (type == 2) {
-        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeShape];
-    }
-}
-
-- (void)showTopView:(BOOL)shown
-{
-    float h = shown ? 231 : 49;
-    [_demoBar mas_updateConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-        } else {
-            make.bottom.equalTo(self.view.mas_bottom);
-        }
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(h);
-    }];
-
-    // [self setPhotoScaleWithHeight:h show:shown];
-}
-
-- (void)filterShowMessage:(NSString *)message
-{
-    NSLog(@"选择滤镜：%@", message);
-}
-
-- (void)filterValueChange:(FUBeautyParam *)param
-{
-    int handle = [[FUManager shareManager] getHandleAboutType:FUNamaHandleTypeBeauty];
-    [FURenderer itemSetParam:handle withName:@"filter_name" value:[param.mParam lowercaseString]];
-    [FURenderer itemSetParam:handle withName:@"filter_level" value:@(param.mValue)]; //滤镜程度
-
-    [FUManager shareManager].seletedFliter = param;
-}
-
-- (void)beautyParamValueChange:(FUBeautyParam *)param
-{
-    if ([param.mParam isEqualToString:@"cheek_narrow"] || [param.mParam isEqualToString:@"cheek_small"]) {//程度值 只去一半
-        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue * 0.5];
-    } else if ([param.mParam isEqualToString:@"blur_level"]) {//磨皮 0~6
-        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue * 6];
-    } else {
-        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue];
-    }
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self.demoBar hiddenTopViewWithAnimation:YES];
 }
 
 @end

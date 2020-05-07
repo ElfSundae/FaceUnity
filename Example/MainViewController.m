@@ -9,10 +9,13 @@
 #import "MainViewController.h"
 #import <FaceUnity/FaceUnity.h>
 #import <ESFramework/ESFramework.h>
+#import "FUAPIDemoBarManagerTestViewController.h"
 
 static NSString *const CellReuseIdentifier = @"CellReuseIdentifier";
 
 @interface MainViewController ()
+
+@property (nonatomic, strong) NSArray *data;
 
 @end
 
@@ -30,41 +33,63 @@ static NSString *const CellReuseIdentifier = @"CellReuseIdentifier";
     self.title = UIApplication.sharedApplication.appDisplayName;
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReuseIdentifier];
+
+    self.data = @[
+        @[
+            @{
+                @"title": @"美颜设置",
+                @"action": NSStringFromSelector(@selector(openBeautySetting)),
+            },
+        ],
+        @[
+            @{
+                @"title": @"测试 FUAPIDemoBarManager",
+                @"action": NSStringFromSelector(@selector(openDemoBarManagerTest)),
+            },
+        ],
+    ];
+}
+
+- (NSDictionary *)dataForIndexPath:(NSIndexPath *)indexPath
+{
+    return self.data[indexPath.section][indexPath.row];
+}
+
+- (void)openBeautySetting
+{
+    [self.navigationController pushViewController:[FUBeautySettingViewController new] animated:YES];
+}
+
+- (void)openDemoBarManagerTest
+{
+    [self.navigationController pushViewController:[FUAPIDemoBarManagerTestViewController new] animated:YES];
 }
 
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.data.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [(NSArray *)self.data[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier forIndexPath:indexPath];
 
-    switch (indexPath.row) {
-        case 0:
-            cell.textLabel.text = @"美颜设置";
-            break;
-
-        default:
-            break;
-    }
+    cell.textLabel.text = [self dataForIndexPath:indexPath][@"title"];
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.row) {
-        case 0:
-            [self.navigationController pushViewController:[FUPreviewViewController new] animated:YES];
-            break;
-
-        default:
-            break;
-    }
+    SEL sel = NSSelectorFromString([self dataForIndexPath:indexPath][@"action"]);
+    ESInvokeSelector(self, sel, NULL);
 }
 
 @end

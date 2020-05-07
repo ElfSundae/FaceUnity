@@ -1,5 +1,5 @@
 //
-//  FUPreviewViewController.h
+//  FUBeautySettingViewController.h
 //  FaceUnity
 //
 //  Created by Elf Sundae on 2020/03/23.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FUPreviewViewController : UIViewController
+@interface FUBeautySettingViewController : UIViewController
 
 @end
 

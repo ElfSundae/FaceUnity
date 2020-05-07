@@ -11,7 +11,10 @@
 FOUNDATION_EXPORT double FaceUnityVersionNumber;
 FOUNDATION_EXPORT const unsigned char FaceUnityVersionString[];
 
+#import <FaceUnity/FUAPIDemoBarManager.h>
 #import <FaceUnity/FUAuthData.h>
+#import <FaceUnity/FUBeautySettingViewController.h>
+#import <FaceUnity/FUCaptureManager.h>
 #import <FaceUnity/FUCamera.h>
 #import <FaceUnity/FUImageHelper.h>
 #import <FaceUnity/FUManager.h>
@@ -27,6 +30,5 @@ FOUNDATION_EXPORT const unsigned char FaceUnityVersionString[];
 #import <FaceUnity/FUFilterView.h>
 #import <FaceUnity/FUSlider.h>
 #import <FaceUnity/UIColor+FUAPIDemoBar.h>
-#import <FaceUnity/FUPreviewViewController.h>
 #import <FaceUnity/NSBundle+FaceUnity.h>
 #import <FaceUnity/UIImage+demobar.h>
