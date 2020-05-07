@@ -1,11 +1,11 @@
 PODS:
-  - ESFramework (3.22.0):
-    - ESFramework/Foundation (= 3.22.0)
-    - ESFramework/Network (= 3.22.0)
-    - ESFramework/UIKit (= 3.22.0)
-  - ESFramework/Foundation (3.22.0)
-  - ESFramework/Network (3.22.0)
-  - ESFramework/UIKit (3.22.0):
+  - ESFramework (3.22.1):
+    - ESFramework/Foundation (= 3.22.1)
+    - ESFramework/Network (= 3.22.1)
+    - ESFramework/UIKit (= 3.22.1)
+  - ESFramework/Foundation (3.22.1)
+  - ESFramework/Network (3.22.1)
+  - ESFramework/UIKit (3.22.1):
     - ESFramework/Foundation
     - ESFramework/Network
   - FaceUnity (0.1.0):
@@ -36,7 +36,7 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  ESFramework: af5dfb07453406a2d5b6a6a8e2ffbaf939fa69ba
+  ESFramework: a757be349ff8a1eab5b41714f3f61716c9be7c2e
   FaceUnity: f224fefb123df23cf7a6ab86a89410a99906ce2a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Nama-lite: 58dbabb948a6d4622c94d8a83419f02fbfa65103

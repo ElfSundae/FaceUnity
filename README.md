@@ -5,7 +5,7 @@
 
 iOS face-beautification toolkit built upon [FaceUnity](https://www.faceunity.com) Nama SDK and [FULiveDemo](https://github.com/Faceunity/FULiveDemo).
 
-iOS 相芯美颜 SDK 集成工具包。
+相芯美颜 SDK 集成工具包。
 
 ## Installation
 
