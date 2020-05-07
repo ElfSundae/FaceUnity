@@ -25,7 +25,7 @@ pod 'FaceUnity/Full'
 
 ### Configure your authpack
 
-You must use `FUSetAuthData()` to configure your FaceUnity authpack before invoking any methods of Nama SDK.
+You must call `FUSetAuthData()` to configure your FaceUnity authpack before invoking any methods of Nama SDK.
 
 ```objc
 #import <FaceUnity/FaceUnity.h>
