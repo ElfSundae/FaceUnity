@@ -11,15 +11,10 @@
 #import <CoreMotion/CoreMotion.h>
 #import <FURenderer.h>
 #import "FUManager.h"
-#import "FULiveModel.h"
 #import "FUCamera.h"
 #import "FUOpenGLView.h"
 #import "FUCaptureManager.h"
 #import "FUAPIDemoBarManager.h"
-
-#define iPhoneXStyle ((KScreenWidth == 375.f && KScreenHeight == 812.f ? YES : NO) || (KScreenWidth == 414.f && KScreenHeight == 896.f ? YES : NO))
-#define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
-#define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
 @interface FUBeautySettingViewController () <FUCameraDelegate, FUCameraDataSource>
 {
@@ -39,8 +34,7 @@
 
 - (void)dealloc
 {
-    [self stopListeningDirectionOfDevice];
-    NSLog(@"----界面销毁");
+    [FUCaptureManager.sharedManager stop];
 }
 
 - (void)viewDidLoad
@@ -57,16 +51,14 @@
 
     /* 后台监听 */
     [self addObserver];
-    /* 同步 */
-    [[FUManager shareManager] setAsyncTrackFaceEnable:NO];
-    /* 最大识别人脸数 */
-    [FUManager shareManager].enableMaxFaces = YES;
-
-    [FUAPIDemoBarManager.sharedManager showInView:self.view];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchScreenAction:)];
     [self.renderView addGestureRecognizer:tap];
-    //    self.renderView.contentMode = FUOpenGLViewContentModeScaleAspectFit;
+    // self.renderView.contentMode = FUOpenGLViewContentModeScaleAspectFit;
+
+    [FUCaptureManager.sharedManager prepare];
+
+    [FUAPIDemoBarManager.sharedManager showInView:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -75,8 +67,8 @@
 
     [self.mCamera startCapture];
     [self.mCamera changeSessionPreset:AVCaptureSessionPreset1280x720];
-    /* 监听屏幕方向 */
-    [self startListeningDirectionOfDevice];
+
+    [FUCaptureManager.sharedManager start];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -86,10 +78,7 @@
     [self.mCamera resetFocusAndExposureModes];
     [self.mCamera stopCapture];
 
-    /* 清一下信息，防止快速切换有人脸信息缓存 */
-    [FURenderer onCameraChange];
-    /* 监听屏幕方向 */
-    [self stopListeningDirectionOfDevice];
+    [FUCaptureManager.sharedManager stop];
 }
 
 #pragma mark -  UI事件
@@ -222,69 +211,6 @@
     if (self.navigationController.visibleViewController == self) {
         [self.mCamera startCapture];
     }
-}
-
-#pragma mark -  方向监听
-
-/// 开启屏幕旋转的检测
-- (void)startListeningDirectionOfDevice
-{
-    if (self.motionManager == nil) {
-        self.motionManager = [[CMMotionManager alloc] init];
-    }
-    self.motionManager.deviceMotionUpdateInterval = 0.3;
-
-    // 判断设备传感器是否可用
-    if (self.motionManager.deviceMotionAvailable) {
-        // 启动设备的运动更新，通过给定的队列向给定的处理程序提供数据。
-        [self.motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
-            [self performSelectorOnMainThread:@selector(handleDeviceMotion:) withObject:motion waitUntilDone:YES];
-        }];
-    } else {
-        [self setMotionManager:nil];
-    }
-}
-
-- (void)stopListeningDirectionOfDevice
-{
-    if (_motionManager) {
-        [_motionManager stopDeviceMotionUpdates];
-        _motionManager = nil;
-    }
-}
-
-- (void)handleDeviceMotion:(CMDeviceMotion *)deviceMotion
-{
-    double x = deviceMotion.gravity.x;
-    double y = deviceMotion.gravity.y;
-    int orientation = 0;
-
-    if (fabs(y) >= fabs(x)) {// 竖屏
-        if (y < 0) {
-            orientation = 0;
-        }
-        else {
-            orientation = 2;
-        }
-    }
-    else { // 横屏
-        if (x < 0) {
-            orientation = 1;
-        }
-        else {
-            orientation = 3;
-        }
-    }
-
-    if (orientation != _orientation) {
-        self.orientation = orientation;
-    }
-}
-
-- (void)setOrientation:(int)orientation
-{
-    _orientation = orientation;
-    fuSetDefaultRotationMode(orientation);
 }
 
 @end
