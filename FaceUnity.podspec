@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
     ss.dependency 'ESFramework', '~> 3.20'
     ss.dependency 'Masonry', '~> 1.1'
     ss.dependency 'SVProgressHUD', '~> 2.2'
+    ss.dependency 'MJExtension', '~> 3.2'
   end
 
   # 相芯 SDK 的每个版本都有可能增加或删除美颜参数，为了防止不同的 Nama 版本所包含的
