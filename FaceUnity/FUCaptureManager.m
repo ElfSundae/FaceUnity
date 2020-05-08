@@ -38,7 +38,7 @@
 - (void)prepare
 {
     // -[FUBaseViewController viewDidLoad]
-    /* 美颜道具 */
+    /* 加载美颜道具 */
     [[FUManager shareManager] loadFilter];
     /* 同步 */
     [[FUManager shareManager] setAsyncTrackFaceEnable:NO];

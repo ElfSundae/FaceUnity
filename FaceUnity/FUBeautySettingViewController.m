@@ -175,7 +175,6 @@
     return CGPointMake(center.y / imageH, self.mCamera.isFrontCamera ? center.x / imageW : 1 - center.x / imageW);
 }
 
-
 - (CGPoint)getCenterFromeLandmarks:(float *)Landmarks
 {
     float min_x = 10000, min_y = 10000, max_x = 0, max_y = 0;

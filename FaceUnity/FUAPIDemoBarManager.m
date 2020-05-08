@@ -35,9 +35,6 @@
 {
     [self hide];
 
-    /* 美颜道具 */
-    [[FUManager shareManager] loadFilter];
-
     self.demoBar = [[FUAPIDemoBar alloc] init];
     self.demoBar.mDelegate = self;
     [view addSubview:self.demoBar];
@@ -57,7 +54,7 @@
 
     [self.demoBar setDefaultFilter:[FUManager shareManager].seletedFliter];
 
-    // 默认打开「美颜」面板
+    // 默认打开「美肤」面板
     UIButton *skinButton = (UIButton *)[self.demoBar valueForKey:@"skinBtn"];
     [skinButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
