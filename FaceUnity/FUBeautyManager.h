@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 @class FUAPIDemoBar;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)prepareToCapture;
 - (void)captureStarted;
 - (void)captureStopped;
+
+@end
+
+@interface FUBeautyManager (FUSettingsPanel)
 
 - (FUAPIDemoBar *)showSettingsPanelInView:(UIView *)view;
 - (void)hideSettingsPanelInView:(UIView *)view;

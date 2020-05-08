@@ -8,7 +8,6 @@
 
 #import "FUBeautySettingViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import <CoreMotion/CoreMotion.h>
 #import <FURenderer.h>
 #import "FUManager.h"
 #import "FUCamera.h"
@@ -23,9 +22,6 @@
 
 @property (nonatomic, strong) FUCamera *mCamera;
 @property (nonatomic, strong) FUOpenGLView *renderView;
-
-@property (nonatomic, assign) int orientation;
-@property (nonatomic, strong) CMMotionManager *motionManager;
 
 @end
 
