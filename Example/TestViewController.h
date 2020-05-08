@@ -1,5 +1,5 @@
 //
-//  FUAPIDemoBarManagerTestViewController.h
+//  TestViewController.h
 //  Example
 //
 //  Created by Elf Sundae on 2020/05/07.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FUAPIDemoBarManagerTestViewController : UIViewController
+@interface TestViewController : UIViewController
 
 @end
 

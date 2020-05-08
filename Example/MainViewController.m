@@ -9,7 +9,7 @@
 #import "MainViewController.h"
 #import <FaceUnity/FaceUnity.h>
 #import <ESFramework/ESFramework.h>
-#import "FUAPIDemoBarManagerTestViewController.h"
+#import "TestViewController.h"
 
 static NSString *const CellReuseIdentifier = @"CellReuseIdentifier";
 
@@ -43,8 +43,8 @@ static NSString *const CellReuseIdentifier = @"CellReuseIdentifier";
         ],
         @[
             @{
-                @"title": @"测试 FUAPIDemoBarManager",
-                @"action": NSStringFromSelector(@selector(openDemoBarManagerTest)),
+                @"title": @"Test",
+                @"action": NSStringFromSelector(@selector(openTestViewController)),
             },
         ],
     ];
@@ -60,9 +60,9 @@ static NSString *const CellReuseIdentifier = @"CellReuseIdentifier";
     [self.navigationController pushViewController:[FUBeautySettingViewController new] animated:YES];
 }
 
-- (void)openDemoBarManagerTest
+- (void)openTestViewController
 {
-    [self.navigationController pushViewController:[FUAPIDemoBarManagerTestViewController new] animated:YES];
+    [self.navigationController pushViewController:[TestViewController new] animated:YES];
 }
 
 #pragma mark - Table view data source

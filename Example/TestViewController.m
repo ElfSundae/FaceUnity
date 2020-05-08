@@ -1,19 +1,15 @@
 //
-//  FUAPIDemoBarManagerTestViewController.m
+//  TestViewController.m
 //  Example
 //
 //  Created by Elf Sundae on 2020/05/07.
 //  Copyright © 2020 https://0x123.com. All rights reserved.
 //
 
-#import "FUAPIDemoBarManagerTestViewController.h"
+#import "TestViewController.h"
 #import <FaceUnity/FaceUnity.h>
 
-@interface FUAPIDemoBarManagerTestViewController ()
-
-@end
-
-@implementation FUAPIDemoBarManagerTestViewController
+@implementation TestViewController
 
 - (void)viewDidLoad
 {
@@ -26,12 +22,12 @@
 
 - (void)toggleDemoBar
 {
-    FUAPIDemoBarManager *manager = FUAPIDemoBarManager.sharedManager;
-    if (!manager.isShowing) {
-        [manager showInView:self.view];
+    FUBeautyManager *manager = FUBeautyManager.sharedManager;
+    if (![manager settingsPanelInView:self.view]) {
+        [manager showSettingsPanelInView:self.view];
         self.navigationItem.rightBarButtonItem.title = @"隐藏";
     } else {
-        [manager hide];
+        [manager hideSettingsPanelInView:self.view];
         self.navigationItem.rightBarButtonItem.title = @"显示";
     }
 }

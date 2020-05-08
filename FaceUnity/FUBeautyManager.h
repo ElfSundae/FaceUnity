@@ -1,5 +1,5 @@
 //
-//  FUAPIDemoBarManager.h
+//  FUBeautyManager.h
 //  FaceUnity
 //
 //  Created by Elf Sundae on 2020/05/07.
@@ -11,15 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FUAPIDemoBarManager : NSObject
+@interface FUBeautyManager : NSObject
 
 + (instancetype)sharedManager;
 
-@property (nullable, nonatomic, strong, readonly) FUAPIDemoBar *demoBar;
-
-- (void)showInView:(UIView *)view;
-- (void)hide;
-- (BOOL)isShowing;
+- (FUAPIDemoBar *)showSettingsPanelInView:(UIView *)view;
+- (void)hideSettingsPanelInView:(UIView *)view;
+- (nullable FUAPIDemoBar *)settingsPanelInView:(UIView *)view;
 
 @end
 

@@ -14,7 +14,7 @@
 #import "FUCamera.h"
 #import "FUOpenGLView.h"
 #import "FUCaptureManager.h"
-#import "FUAPIDemoBarManager.h"
+#import "FUBeautyManager.h"
 
 @interface FUBeautySettingViewController () <FUCameraDelegate, FUCameraDataSource>
 {
@@ -58,7 +58,7 @@
 
     [FUCaptureManager.sharedManager prepare];
 
-    [FUAPIDemoBarManager.sharedManager showInView:self.view];
+    [FUBeautyManager.sharedManager showSettingsPanelInView:self.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated
