@@ -7,9 +7,9 @@
 //
 
 #import "FUAPIDemoBar+FUAPIDemoBarDelegate.h"
+#import <Masonry/Masonry.h>
 #import <FURenderer.h>
 #import "FUManager.h"
-#import <Masonry/Masonry.h>
 
 @implementation FUAPIDemoBar (FUAPIDemoBarDelegate)
 

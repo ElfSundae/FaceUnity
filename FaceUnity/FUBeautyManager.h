@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedManager;
 
+- (void)prepareToCapture;
+- (void)captureStarted;
+- (void)captureStopped;
+
 - (FUAPIDemoBar *)showSettingsPanelInView:(UIView *)view;
 - (void)hideSettingsPanelInView:(UIView *)view;
 - (nullable FUAPIDemoBar *)settingsPanelInView:(UIView *)view;

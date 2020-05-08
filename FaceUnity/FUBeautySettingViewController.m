@@ -13,7 +13,6 @@
 #import "FUManager.h"
 #import "FUCamera.h"
 #import "FUOpenGLView.h"
-#import "FUCaptureManager.h"
 #import "FUBeautyManager.h"
 
 @interface FUBeautySettingViewController () <FUCameraDelegate, FUCameraDataSource>
@@ -34,7 +33,7 @@
 
 - (void)dealloc
 {
-    [FUCaptureManager.sharedManager stop];
+    [FUBeautyManager.sharedManager captureStopped];
 }
 
 - (void)viewDidLoad
@@ -56,7 +55,7 @@
     [self.renderView addGestureRecognizer:tap];
     // self.renderView.contentMode = FUOpenGLViewContentModeScaleAspectFit;
 
-    [FUCaptureManager.sharedManager prepare];
+    [FUBeautyManager.sharedManager prepareToCapture];
 
     [FUBeautyManager.sharedManager showSettingsPanelInView:self.view];
 }
@@ -68,7 +67,7 @@
     [self.mCamera startCapture];
     [self.mCamera changeSessionPreset:AVCaptureSessionPreset1280x720];
 
-    [FUCaptureManager.sharedManager start];
+    [FUBeautyManager.sharedManager captureStarted];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -78,7 +77,7 @@
     [self.mCamera resetFocusAndExposureModes];
     [self.mCamera stopCapture];
 
-    [FUCaptureManager.sharedManager stop];
+    [FUBeautyManager.sharedManager captureStopped];
 }
 
 #pragma mark -  UI事件
@@ -203,7 +202,6 @@
         //        self.mCamera = nil;
     }
 }
-
 
 - (void)didBecomeActive
 {
