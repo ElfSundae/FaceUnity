@@ -37,7 +37,7 @@
 
 - (void)prepareToCapture
 {
-    // -[FUBaseViewController viewDidLoad]
+    // Code from -[FUBaseViewController viewDidLoad]
     /* 加载美颜道具 */
     [[FUManager shareManager] loadFilter];
     /* 同步 */
@@ -48,20 +48,22 @@
 
 - (void)captureStarted
 {
-    // -[FUBaseViewController viewWillAppear:]
+    // Code from -[FUBaseViewController viewWillAppear:]
     /* 监听屏幕方向 */
     [self startListeningDirectionOfDevice];
 }
 
 - (void)captureStopped
 {
-    // -[FUBaseViewController viewWillDisappear:]
+    // Code from -[FUBaseViewController viewWillDisappear:]
     /* 清一下信息，防止快速切换有人脸信息缓存 */
     [FURenderer onCameraChange];
     /* 监听屏幕方向 */
     [self stopListeningDirectionOfDevice];
 }
 
+// Code from FUBaseViewController
+/// 开启屏幕旋转的检测
 - (void)startListeningDirectionOfDevice
 {
     if (self.motionManager == nil) {
@@ -80,6 +82,7 @@
     }
 }
 
+// Code from FUBaseViewController
 - (void)stopListeningDirectionOfDevice
 {
     if (_motionManager) {
@@ -88,6 +91,7 @@
     }
 }
 
+// Code from FUBaseViewController
 - (void)handleDeviceMotion:(CMDeviceMotion *)deviceMotion
 {
     double x = deviceMotion.gravity.x;
@@ -116,11 +120,12 @@
     }
 }
 
+// Code from FUBaseViewController
 - (void)setOrientation:(int)orientation
 {
     _orientation = orientation;
 
-    // -[FUBeautyController setOrientation:]
+    // Code from -[FUBeautyController setOrientation:]
     fuSetDefaultRotationMode(orientation);
 }
 
