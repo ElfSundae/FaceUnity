@@ -23,15 +23,39 @@ pod 'FaceUnity/Full'
 
 ## Usage
 
-### Configure your authpack
+### Configure auth data for Nama SDK
 
-You must call `FUSetAuthData()` to configure your FaceUnity authpack before invoking any methods of Nama SDK.
+You must call `FUSetAuthData()` to configure your FaceUnity auth data before invoking any methods of Nama SDK:
 
 ```objc
 #import <FaceUnity/FaceUnity.h>
 #import "authpack.h"
 
 FUSetAuthData(&g_auth_package, sizeof(g_auth_package));
+```
+
+`FUSetAuthData()` can be called multiple times before you use any FaceUnity functions, it is useful when you want to load the auth data from a remote location, for example:
+
+```objc
+if (! loadFromCache(cacheFile)) {
+    // Load the default authpack.
+    FUSetAuthData(&g_auth_package, sizeof(g_auth_package));
+}
+
+downloadAuthData(cacheFile, ^{
+    loadFromCache(cacheFile);
+});
+```
+
+### Preload items
+
+After configuring the auth data, you may preload items to speed up the first loading time:
+
+```objc
+// Preload FaceUnity dataSource and items.
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    [[FUManager shareManager] loadFilter];
+});
 ```
 
 ### Nama SDK documentation
