@@ -57,7 +57,7 @@ static NSString *const CellReuseIdentifier = @"CellReuseIdentifier";
 
 - (void)openBeautySetting
 {
-    [self.navigationController pushViewController:[FUBeautySettingViewController new] animated:YES];
+    [self.navigationController pushViewController:[FUBeautySettingsViewController new] animated:YES];
 }
 
 - (void)openTestViewController

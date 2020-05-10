@@ -1,12 +1,12 @@
 //
-//  FUBeautySettingViewController.m
+//  FUBeautySettingsViewController.m
 //  FaceUnity
 //
 //  Created by Elf Sundae on 2020/03/23.
 //  Copyright © 2020 https://0x123.com. All rights reserved.
 //
 
-#import "FUBeautySettingViewController.h"
+#import "FUBeautySettingsViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <FURenderer.h>
 #import "FUManager.h"
@@ -14,7 +14,7 @@
 #import "FUOpenGLView.h"
 #import "FUBeautyManager.h"
 
-@interface FUBeautySettingViewController () <FUCameraDelegate, FUCameraDataSource>
+@interface FUBeautySettingsViewController () <FUCameraDelegate, FUCameraDataSource>
 {
     float imageW;
     float imageH;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation FUBeautySettingViewController
+@implementation FUBeautySettingsViewController
 
 - (void)dealloc
 {
@@ -134,11 +134,6 @@
     [[FUManager shareManager] renderItemsToPixelBuffer:pixelBuffer];
 
     [self.renderView displayPixelBuffer:pixelBuffer];
-
-    //    [self.renderView displayPixelBuffer:pixelBuffer withLandmarks:cetera count:2 MAX:NO];
-    //    static float posterLandmarks[239* 2];
-    //    [FURenderer getFaceInfo:0 name:@"landmarks" pret:posterLandmarks number:239* 2];
-    //    [self.renderView displayPixelBuffer:pixelBuffer withLandmarks:posterLandmarks count:239* 2 MAX:NO];
 }
 
 #pragma mark - FUCameraDataSource
@@ -195,7 +190,6 @@
 {
     if (self.navigationController.visibleViewController == self) {
         [self.mCamera stopCapture];
-        //        self.mCamera = nil;
     }
 }
 
