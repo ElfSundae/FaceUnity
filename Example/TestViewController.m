@@ -17,18 +17,37 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"显示" style:UIBarButtonItemStylePlain target:self action:@selector(toggleDemoBar)];
+    self.navigationItem.rightBarButtonItems = @[
+        [[UIBarButtonItem alloc] initWithTitle:@"显示面板" style:UIBarButtonItemStylePlain target:self action:@selector(toggleSettingsPanel)],
+        [[UIBarButtonItem alloc] initWithTitle:@"切换配置" style:UIBarButtonItemStylePlain target:self action:@selector(changeBeautyPreferences)],
+    ];
 }
 
-- (void)toggleDemoBar
+- (void)toggleSettingsPanel
 {
     FUBeautyManager *manager = FUBeautyManager.sharedManager;
     if (![manager settingsPanelInView:self.view]) {
         [manager showSettingsPanelInView:self.view];
-        self.navigationItem.rightBarButtonItem.title = @"隐藏";
+        self.navigationItem.rightBarButtonItem.title = @"隐藏面板";
     } else {
         [manager hideSettingsPanelInView:self.view];
-        self.navigationItem.rightBarButtonItem.title = @"显示";
+        self.navigationItem.rightBarButtonItem.title = @"显示面板";
+    }
+}
+
+- (void)changeBeautyPreferences
+{
+    FUBeautyManager *manager = FUBeautyManager.sharedManager;
+    if (manager.preferencesIdentifier) {
+        manager.preferencesIdentifier = nil;
+    } else {
+        manager.preferencesIdentifier = @"123456";
+    }
+    NSLog(@"Beauty preferences identifier: %@", manager.preferencesIdentifier);
+
+    if ([manager settingsPanelInView:self.view]) {
+        [manager hideSettingsPanelInView:self.view];
+        [manager showSettingsPanelInView:self.view];
     }
 }
 
