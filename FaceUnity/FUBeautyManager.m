@@ -8,8 +8,13 @@
 
 #import "FUBeautyManager.h"
 #import <CoreMotion/CoreMotion.h>
+#import <ESFramework/ESFramework.h>
 #import <FURenderer.h>
 #import "FUManager.h"
+#import "FUBeautyPreferences.h"
+
+static NSString *const FUDefaultPreferencesFilename = @"default";
+static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.preferencesSaving";
 
 @interface FUBeautyManager ()
 
@@ -18,6 +23,10 @@
 @property (nonatomic, strong) CMMotionManager *motionManager;
 /* 当前方向 */
 @property (nonatomic, assign) int orientation;
+
+/// preferences 文件路径，同时标记是否已替换过 FUManager 的美颜参数变量
+@property (nullable, nonatomic, copy) NSString *preferencesFilePath;
+@property (nonatomic, strong) dispatch_queue_t preferencesSavingQueue;
 
 @end
 
@@ -33,6 +42,84 @@
     return manager;
 }
 
+#pragma mark - Beauty Preferences
+
+- (void)setPreferencesIdentifier:(NSString *)identifier
+{
+    if (_preferencesIdentifier != identifier
+        && ![_preferencesIdentifier isEqual:identifier]) {
+        _preferencesIdentifier = [identifier copy];
+
+        self.preferencesFilePath = nil;
+    }
+}
+
+- (void)loadPreferences
+{
+    if (self.preferencesFilePath) {
+        return;
+    }
+
+    NSString *filename = self.preferencesIdentifier ?: FUDefaultPreferencesFilename;
+    self.preferencesFilePath = ESLibraryPath([NSString stringWithFormat:@"FaceUnity/Preferences/%@.plist", filename]);
+
+    FUBeautyPreferences *prefs = nil;
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:self.preferencesFilePath];
+    if (dict) {
+        prefs = [FUBeautyPreferences preferencesWithDictionary:dict];
+    }
+
+    // TODO: 升级 Nama 版本时兼容升级(逐一比较各个参数)本地旧版本的美颜配置
+    if (prefs && ![prefs.version isEqualToString:[FURenderer getVersion]]) {
+        prefs = nil;
+    }
+
+    if (prefs) {
+        [FUManager shareManager].skinParams = prefs.skinParams;
+        [FUManager shareManager].shapeParams = prefs.shapeParams;
+        [FUManager shareManager].filters = prefs.filters;
+        [FUManager shareManager].seletedFliter = prefs.selectedFilter;
+    } else {
+        // Use the default beauty parameters
+        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeSkin];
+        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeShape];
+        [FUManager shareManager].filters = nil;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        ESInvokeSelector([FUManager shareManager], @selector(setupFilterData), NULL);
+#pragma clang diagnostic pop
+    }
+}
+
+- (void)savePreferences
+{
+    FUBeautyPreferences *prefs = [FUBeautyPreferences new];
+    prefs.version = [FURenderer getVersion];
+    prefs.skinParams = FUManager.shareManager.skinParams;
+    prefs.shapeParams = FUManager.shareManager.shapeParams;
+    prefs.filters = FUManager.shareManager.filters;
+    prefs.selectedFilter = FUManager.shareManager.seletedFliter;
+
+    dispatch_async(self.preferencesSavingQueue, ^{
+        if (!self.preferencesFilePath) {
+            return;
+        }
+
+        [NSFileManager.defaultManager createDirectoryAtPath:
+         [self.preferencesFilePath stringByDeletingLastPathComponent]];
+        [[prefs encodeToDictionary] writeToFile:self.preferencesFilePath atomically:YES];
+    });
+}
+
+- (dispatch_queue_t)preferencesSavingQueue
+{
+    if (!_preferencesSavingQueue) {
+        _preferencesSavingQueue = dispatch_queue_create(FUPreferencesSavingQueueLabel,
+                                                        DISPATCH_QUEUE_SERIAL);
+    }
+    return _preferencesSavingQueue;
+}
+
 #pragma mark - Capture Helpers
 
 - (void)prepareToCapture
@@ -44,6 +131,8 @@
     [[FUManager shareManager] setAsyncTrackFaceEnable:NO];
     /* 最大识别人脸数 */
     [FUManager shareManager].enableMaxFaces = YES;
+
+    [self loadPreferences];
 }
 
 - (void)captureStarted

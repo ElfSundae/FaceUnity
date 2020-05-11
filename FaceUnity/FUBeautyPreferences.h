@@ -13,13 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FUBeautyPreferences : NSObject
 
-@property (nonatomic, copy) NSString *SDKVersion;
+@property (nonatomic, copy) NSString *version;
 
-@property (nonatomic, strong) NSArray<FUBeautyParam *> *skinParams;
-@property (nonatomic, strong) NSArray<FUBeautyParam *> *shapeParams;
-@property (nonatomic, strong) NSArray<FUBeautyParam *> *filters;
+@property (nonatomic, strong) NSMutableArray<FUBeautyParam *> *skinParams;
+@property (nonatomic, strong) NSMutableArray<FUBeautyParam *> *shapeParams;
+@property (nonatomic, strong) NSMutableArray<FUBeautyParam *> *filters;
 @property (nonatomic, readonly) NSUInteger selectedFilterIndex;
 @property (nonatomic, strong) FUBeautyParam *selectedFilter;
+
++ (nullable instancetype)preferencesWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)encodeToDictionary;
 
 @end
 

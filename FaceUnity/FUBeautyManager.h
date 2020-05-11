@@ -16,7 +16,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedManager;
 
+/**
+ * The beauty preferences identifier.
+ */
+@property (nullable, nonatomic, copy) NSString *preferencesIdentifier;
+
+- (void)savePreferences;
+
+/**
+ * Called before capturing: configure Nama SDK, load beauty items, load beauty
+ * preferences.
+ */
 - (void)prepareToCapture;
+
 - (void)captureStarted;
 - (void)captureStopped;
 

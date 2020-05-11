@@ -18,9 +18,9 @@ static const NSInteger SettingsPanelTag = -90008000;
 
 - (FUAPIDemoBar *)showSettingsPanelInView:(UIView *)view
 {
-    /* 加载美颜道具 */
-    [[FUManager shareManager] loadFilter];
-    
+    // Make sure the beauty preferences are loaded.
+    [self prepareToCapture];
+
     [self hideSettingsPanelInView:view];
 
     FUAPIDemoBar *settingsPanel = [FUAPIDemoBar new];

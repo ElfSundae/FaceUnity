@@ -10,6 +10,7 @@
 #import <Masonry/Masonry.h>
 #import <FURenderer.h>
 #import "FUManager.h"
+#import <FUBeautyManager.h>
 
 @implementation FUAPIDemoBar (FUAPIDemoBarDelegate)
 
@@ -22,6 +23,8 @@
     } else {
         [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue];
     }
+
+    [FUBeautyManager.sharedManager savePreferences];
 }
 
 - (void)filterValueChange:(FUBeautyParam *)param
@@ -31,6 +34,8 @@
     [FURenderer itemSetParam:handle withName:@"filter_level" value:@(param.mValue)]; //滤镜程度
 
     [FUManager shareManager].seletedFliter = param;
+
+    [FUBeautyManager.sharedManager savePreferences];
 }
 
 - (void)restDefaultValue:(int)type
@@ -42,6 +47,8 @@
     if (type == 2) {
         [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeShape];
     }
+
+    [FUBeautyManager.sharedManager savePreferences];
 }
 
 - (void)showTopView:(BOOL)shown

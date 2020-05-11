@@ -8,6 +8,7 @@
 
 #import "FUBeautyPreferences.h"
 #import <MJExtension/MJExtension.h>
+#import "FUBeautyParam.h"
 
 @interface FUBeautyPreferences ()
 
@@ -17,9 +18,19 @@
 
 @implementation FUBeautyPreferences
 
-+ (NSArray *)mj_ignoredPropertyNames
++ (void)load
 {
-    return @[ @"selectedFilter" ];
+    [self mj_setupIgnoredPropertyNames:^NSArray *{
+        return @[ NSStringFromSelector(@selector(selectedFilter)) ];
+    }];
+
+    [self mj_setupObjectClassInArray:^NSDictionary *{
+        return @{
+            NSStringFromSelector(@selector(skinParams)): [FUBeautyParam class],
+            NSStringFromSelector(@selector(shapeParams)): [FUBeautyParam class],
+            NSStringFromSelector(@selector(filters)): [FUBeautyParam class],
+        };
+    }];
 }
 
 - (void)mj_didConvertToObjectWithKeyValues:(NSDictionary *)keyValues
@@ -35,6 +46,16 @@
         NSUInteger index = [self.filters indexOfObjectIdenticalTo:filter];
         _selectedFilterIndex = (index != NSNotFound ? index : 0);
     }
+}
+
++ (nullable instancetype)preferencesWithDictionary:(NSDictionary *)dictionary
+{
+    return [self mj_objectWithKeyValues:dictionary];
+}
+
+- (NSDictionary *)encodeToDictionary
+{
+    return [self mj_keyValues];
 }
 
 @end
