@@ -11,6 +11,7 @@
 #import "FUManager.h"
 #import "FUAPIDemoBar.h"
 #import "FUAPIDemoBar+FUAPIDemoBarDelegate.h"
+#import "FUFilterView.h"
 
 static const NSInteger SettingsPanelTag = -90008000;
 
@@ -41,6 +42,16 @@ static const NSInteger SettingsPanelTag = -90008000;
     [settingsPanel reloadShapView:[FUManager shareManager].shapeParams];
     [settingsPanel reloadFilterView:[FUManager shareManager].filters];
     [settingsPanel setDefaultFilter:[FUManager shareManager].seletedFliter];
+
+    //TODO: Scroll to the current filter item
+//    FUFilterView *filterView = [settingsPanel valueForKey:@"filterView"];
+//    if ([filterView isKindOfClass:[FUFilterView class]]) {
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [filterView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:filterView.selectedIndex inSection:0]
+//                               atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+//                                       animated:NO];
+//        });
+//    }
 
     // Open the "skin" section's topView by default
     UIButton *skinButton = (UIButton *)[settingsPanel valueForKey:@"skinBtn"];
