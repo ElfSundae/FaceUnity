@@ -8,7 +8,7 @@
 
 #import "FUBeautySettingsViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import <FURenderer.h>
+#import "FURenderer.h"
 #import "FUManager.h"
 #import "FUCamera.h"
 #import "FUOpenGLView.h"

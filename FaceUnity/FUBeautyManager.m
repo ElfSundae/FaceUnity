@@ -9,7 +9,7 @@
 #import "FUBeautyManager.h"
 #import <CoreMotion/CoreMotion.h>
 #import <ESFramework/ESFramework.h>
-#import <FURenderer.h>
+#import "FURenderer.h"
 #import "FUManager.h"
 #import "FUBeautyPreferences.h"
 

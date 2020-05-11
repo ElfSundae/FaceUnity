@@ -8,7 +8,7 @@
 
 #import "FUAPIDemoBar+FUAPIDemoBarDelegate.h"
 #import <Masonry/Masonry.h>
-#import <FURenderer.h>
+#import "FURenderer.h"
 #import "FUManager.h"
 #import <FUBeautyManager.h>
 
