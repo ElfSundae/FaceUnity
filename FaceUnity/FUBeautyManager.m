@@ -95,10 +95,10 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 {
     FUBeautyPreferences *prefs = [FUBeautyPreferences new];
     prefs.version = [FURenderer getVersion];
-    prefs.skinParams = FUManager.shareManager.skinParams;
-    prefs.shapeParams = FUManager.shareManager.shapeParams;
-    prefs.filters = FUManager.shareManager.filters;
-    prefs.selectedFilter = FUManager.shareManager.seletedFliter;
+    prefs.skinParams = [FUManager shareManager].skinParams;
+    prefs.shapeParams = [FUManager shareManager].shapeParams;
+    prefs.filters = [FUManager shareManager].filters;
+    prefs.selectedFilter = [FUManager shareManager].seletedFliter;
 
     dispatch_async(self.preferencesSavingQueue, ^{
         if (!self.preferencesFilePath) {
@@ -107,6 +107,7 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 
         [NSFileManager.defaultManager createDirectoryAtPath:
          [self.preferencesFilePath stringByDeletingLastPathComponent]];
+
         [[prefs encodeToDictionary] writeToFile:self.preferencesFilePath atomically:YES];
     });
 }
