@@ -10,45 +10,23 @@
 #import <Masonry/Masonry.h>
 #import "FURenderer.h"
 #import "FUManager.h"
-#import <FUBeautyManager.h>
+#import "FUBeautyManager.h"
 
 @implementation FUAPIDemoBar (FUAPIDemoBarDelegate)
 
 - (void)beautyParamValueChange:(FUBeautyParam *)param
 {
-    if ([param.mParam isEqualToString:@"cheek_narrow"] || [param.mParam isEqualToString:@"cheek_small"]) {//程度值 只去一半
-        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue * 0.5];
-    } else if ([param.mParam isEqualToString:@"blur_level"]) {//磨皮 0~6
-        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue * 6];
-    } else {
-        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue];
-    }
-
-    [FUBeautyManager.sharedManager savePreferences];
+    [FUBeautyManager.sharedManager updateBeautyParam:param];
 }
 
 - (void)filterValueChange:(FUBeautyParam *)param
 {
-    int handle = [[FUManager shareManager] getHandleAboutType:FUNamaHandleTypeBeauty];
-    [FURenderer itemSetParam:handle withName:@"filter_name" value:[param.mParam lowercaseString]];
-    [FURenderer itemSetParam:handle withName:@"filter_level" value:@(param.mValue)]; //滤镜程度
-
-    [FUManager shareManager].seletedFliter = param;
-
-    [FUBeautyManager.sharedManager savePreferences];
+    [FUBeautyManager.sharedManager updateFilterParam:param];
 }
 
 - (void)restDefaultValue:(int)type
 {
-    if (type == 1) {//美肤
-        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeSkin];
-    }
-
-    if (type == 2) {
-        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeShape];
-    }
-
-    [FUBeautyManager.sharedManager savePreferences];
+    [FUBeautyManager.sharedManager resetBeautyParamsForType:type];
 }
 
 - (void)showTopView:(BOOL)shown

@@ -75,20 +75,44 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     }
 
     if (prefs) {
-        [FUManager shareManager].skinParams = prefs.skinParams;
-        [FUManager shareManager].shapeParams = prefs.shapeParams;
-        [FUManager shareManager].filters = prefs.filters;
-        [FUManager shareManager].seletedFliter = prefs.selectedFilter;
+        [self resetAllParamsWithPreferences:prefs];
     } else {
-        // Use the default beauty parameters
-        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeSkin];
-        [[FUManager shareManager] setBeautyDefaultParameters:FUBeautyModuleTypeShape];
-        [FUManager shareManager].filters = nil;
+        [self resetAllParamsToDefault];
+    }
+}
+
+- (void)resetAllParamsWithPreferences:(FUBeautyPreferences *)prefs
+{
+    FUManager *manager = [FUManager shareManager];
+    manager.skinParams = prefs.skinParams;
+    manager.shapeParams = prefs.shapeParams;
+    manager.filters = prefs.filters;
+    manager.seletedFliter = prefs.selectedFilter;
+
+    // Sync param values to Nama SDK (FURenderer)
+    for (FUBeautyParam *param in manager.skinParams) {
+        [self updateBeautyParam:param savePreferences:NO];
+    }
+
+    for (FUBeautyParam *param in manager.shapeParams) {
+        [self updateBeautyParam:param savePreferences:NO];
+    }
+
+    [self updateFilterParam:manager.seletedFliter savePreferences:NO];
+}
+
+- (void)resetAllParamsToDefault
+{
+    [self resetBeautyParamsForType:(FUBeautyModuleTypeSkin | FUBeautyModuleTypeShape)
+                   savePreferences:NO];
+
+    [FUManager shareManager].filters = nil;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-        ESInvokeSelector([FUManager shareManager], @selector(setupFilterData), NULL);
+    ESInvokeSelector([FUManager shareManager], @selector(setupFilterData), NULL);
 #pragma clang diagnostic pop
-    }
+
+    [self updateFilterParam:[FUManager shareManager].seletedFliter savePreferences:NO];
 }
 
 - (void)savePreferences
@@ -217,6 +241,63 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 
     // Code from -[FUBeautyController setOrientation:]
     fuSetDefaultRotationMode(orientation);
+}
+
+#pragma mark - Beauty Parameters
+
+- (void)updateBeautyParam:(FUBeautyParam *)param
+{
+    [self updateBeautyParam:param savePreferences:YES];
+}
+
+- (void)updateBeautyParam:(FUBeautyParam *)param savePreferences:(BOOL)save
+{
+    // Code from -[FUBeautyController beautyParamValueChange:]
+    if ([param.mParam isEqualToString:@"cheek_narrow"] || [param.mParam isEqualToString:@"cheek_small"]) {//程度值 只去一半
+        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue * 0.5];
+    } else if ([param.mParam isEqualToString:@"blur_level"]) {//磨皮 0~6
+        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue * 6];
+    } else {
+        [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue];
+    }
+
+    if (save) {
+        [self savePreferences];
+    }
+}
+
+- (void)updateFilterParam:(FUBeautyParam *)param
+{
+    [self updateFilterParam:param savePreferences:YES];
+}
+
+- (void)updateFilterParam:(FUBeautyParam *)param savePreferences:(BOOL)save
+{
+    // Code from -[FUBeautyController filterValueChange:]
+    int handle = [[FUManager shareManager] getHandleAboutType:FUNamaHandleTypeBeauty];
+    [FURenderer itemSetParam:handle withName:@"filter_name" value:[param.mParam lowercaseString]];
+    [FURenderer itemSetParam:handle withName:@"filter_level" value:@(param.mValue)]; //滤镜程度
+
+    [FUManager shareManager].seletedFliter = param;
+
+    if (save) {
+        [self savePreferences];
+    }
+}
+
+- (void)resetBeautyParamsForType:(FUBeautyModuleType)type
+{
+    [self resetBeautyParamsForType:type savePreferences:YES];
+}
+
+- (void)resetBeautyParamsForType:(FUBeautyModuleType)type savePreferences:(BOOL)save
+{
+    // Code ref -[FUBeautyController restDefaultValue:]
+    [[FUManager shareManager] setBeautyDefaultParameters:type];
+
+    if (save) {
+        [self savePreferences];
+    }
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FUManager.h"
 @class FUAPIDemoBar;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,16 +22,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nullable, nonatomic, copy) NSString *preferencesIdentifier;
 
-- (void)savePreferences;
-
 /**
  * Called before capturing: configure Nama SDK, load beauty items, load beauty
  * preferences.
  */
 - (void)prepareToCapture;
-
 - (void)captureStarted;
 - (void)captureStopped;
+
+- (void)updateBeautyParam:(FUBeautyParam *)param;
+- (void)updateFilterParam:(FUBeautyParam *)param;
+- (void)resetBeautyParamsForType:(FUBeautyModuleType)type;
 
 @end
 
