@@ -10,9 +10,9 @@
 #import <ESFramework/ESFramework.h>
 #import <Masonry/Masonry.h>
 #import "NSBundle+FaceUnity.h"
+#import "FUBeautyManager.h"
 #import "FURenderer.h"
 #import "FUManager.h"
-#import "FUBeautyManager.h"
 
 @implementation FUAPIDemoBar (FUExtended)
 

@@ -17,7 +17,6 @@
 		3F785349E341727DF3F1C83D /* FUBeautyParam.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A033D9477AA2BF0218F70BE /* FUBeautyParam.h */; };
 		40D6545A34BE6C2A6F554566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4EE104CFC32915AAC014639 /* Assets.xcassets */; };
 		41567482276C7AA064404153 /* FUManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADBA4D03C41807CC058CDB4C /* FUManager.h */; };
-		417CF1F775F0478F22238B3F /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10EF026F73F2758471DDD1 /* libPods-Example.a */; };
 		4260B9A7B44D61E26FDC818F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4AD6B8D958E138658B0F85 /* AppDelegate.m */; };
 		42CADCD7C0EC0BDC9C3E7DA3 /* FUAPIDemoBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDED30B45881BA6174AAFEA /* FUAPIDemoBar.m */; };
 		4579A963803C28A610F3CFCA /* FUDemoBarDefine.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B6E25B17D41DB67DC31A465 /* FUDemoBarDefine.h */; };
@@ -54,6 +53,7 @@
 		CB76E773B742753C604A69A6 /* FUAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F0F06C54ED6D3C6324D35EF7 /* FUAuthData.h */; };
 		CD970BFC9F5444597A527A2C /* FUAPIDemoBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C40FA7456962F6360BEB7AD3 /* FUAPIDemoBar.h */; };
 		DA74998CE502CA25479D5972 /* FULiveModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C6295523C84192E2F231FD1 /* FULiveModel.h */; };
+		E044F6407854A34751D02765 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA39CB0A232E2627D493BDF /* libPods-Example.a */; };
 		E327C9965042B1FAE863A2DA /* FUAPIDemoBar+FUExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A97C157C3E8770A600389 /* FUAPIDemoBar+FUExtended.m */; };
 		ECBACCA23B4941D702058B61 /* FUOpenGLView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 525939AA1765A9CC5BE70056 /* FUOpenGLView.h */; };
 		EED9D2AD345A9E2FC2AC4C36 /* FUAPIDemoBar+FUExtended.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B8789E7BCE54427AD202C782 /* FUAPIDemoBar+FUExtended.h */; };
@@ -105,13 +105,11 @@
 		22BBAC5A07D72E15FF7EFF8B /* FUImageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUImageHelper.h; sourceTree = "<group>"; };
 		2A4AD6B8D958E138658B0F85 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2A9E84C8177E78860423AE73 /* FUBeautyManager+FUSettingsPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FUBeautyManager+FUSettingsPanel.m"; sourceTree = "<group>"; };
-		2C1B8C27B9ED1E991BF012A0 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3078057DADE673E9166119E0 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		34D473D505335A752A8483F7 /* FUSquareButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUSquareButton.m; sourceTree = "<group>"; };
 		37231656C54E2AF4AC371077 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		3A26CCA57EEFE42D0A33BBF9 /* FUCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCamera.m; sourceTree = "<group>"; };
 		3B6E25B17D41DB67DC31A465 /* FUDemoBarDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUDemoBarDefine.h; sourceTree = "<group>"; };
-		3F10EF026F73F2758471DDD1 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B447D0A6E06952132E7904 /* FUBeautyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUBeautyView.h; sourceTree = "<group>"; };
 		4A4F38564BBAC81A9C150569 /* FURecordEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FURecordEncoder.h; sourceTree = "<group>"; };
 		4BCC1C5CD5B91869ACFEC1BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -122,10 +120,10 @@
 		5A033D9477AA2BF0218F70BE /* FUBeautyParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUBeautyParam.h; sourceTree = "<group>"; };
 		5B376719EFE6A3C52111422F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		61DF7EBAB426BD62C1B9AB1A /* UIColor+FUAPIDemoBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+FUAPIDemoBar.h"; sourceTree = "<group>"; };
-		673A672A236BEA61CD8B1460 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		67CF4FFE5D2158D299CB2A7C /* FUSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUSlider.h; sourceTree = "<group>"; };
 		6F34C6AB2E6E6E4E11A0816F /* FULiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FULiveModel.m; sourceTree = "<group>"; };
 		7D4C37E6B957C33BDCDE7178 /* dataSource.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = dataSource.plist; sourceTree = "<group>"; };
+		80A5687A3A24B2110D35D65A /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		88D66AA8DAF7AE3B826FEA18 /* FUBeautyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyView.m; sourceTree = "<group>"; };
 		8B874536C75635B45F37457F /* FUBeautyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyManager.m; sourceTree = "<group>"; };
 		92838819ED2EDD44EA3F432D /* FUBeautyPreferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyPreferences.m; sourceTree = "<group>"; };
@@ -150,6 +148,8 @@
 		C40FA7456962F6360BEB7AD3 /* FUAPIDemoBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUAPIDemoBar.h; sourceTree = "<group>"; };
 		C4EE104CFC32915AAC014639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCDED30B45881BA6174AAFEA /* FUAPIDemoBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUAPIDemoBar.m; sourceTree = "<group>"; };
+		CDA39CB0A232E2627D493BDF /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB63A47444E9ECC5CC1A857 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D25082F05B7D08D476505A01 /* FUBeautyParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyParam.m; sourceTree = "<group>"; };
 		D2D28C3677E054A2D07F83F6 /* NSBundle+FaceUnity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+FaceUnity.m"; sourceTree = "<group>"; };
 		D7835601002E4E0BAA27C6DF /* FUManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUManager.m; sourceTree = "<group>"; };
@@ -167,18 +167,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1F123D63236DAAF25E8A9C03 /* Frameworks */ = {
+		4926F703C84108D91FA5BE49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E044F6407854A34751D02765 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B5EAF5B706C624CB09722A1 /* Frameworks */ = {
+		D2026DB2EF63F2DC7D49FD9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417CF1F775F0478F22238B3F /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,8 +211,8 @@
 				30512840D24CE5D5B9B49CBC /* Example */,
 				C559176FDA64D75472A61F25 /* FaceUnity */,
 				D2EB07C15D84123F7B130FE9 /* Products */,
-				FF44D7C59FD04697EBEAF421 /* Pods */,
-				E02DE631DBEC1DCEB50D36D0 /* Frameworks */,
+				CBCD43F040A66406284DFBAF /* Pods */,
+				9E15D5FE8C84BCDD3CE3B146 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -295,6 +295,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9E15D5FE8C84BCDD3CE3B146 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDA39CB0A232E2627D493BDF /* libPods-Example.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C559176FDA64D75472A61F25 /* FaceUnity */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +327,16 @@
 			path = FaceUnity;
 			sourceTree = "<group>";
 		};
+		CBCD43F040A66406284DFBAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEB63A47444E9ECC5CC1A857 /* Pods-Example.debug.xcconfig */,
+				80A5687A3A24B2110D35D65A /* Pods-Example.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D2EB07C15D84123F7B130FE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,14 +344,6 @@
 				E6B4EA2E9E193A3005D345D3 /* FaceUnity.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E02DE631DBEC1DCEB50D36D0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3F10EF026F73F2758471DDD1 /* libPods-Example.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EC117F9AB0FA191A17879650 /* Modules */ = {
@@ -361,16 +371,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		FF44D7C59FD04697EBEAF421 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2C1B8C27B9ED1E991BF012A0 /* Pods-Example.debug.xcconfig */,
-				673A672A236BEA61CD8B1460 /* Pods-Example.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,7 +381,7 @@
 				E6AA5765DB68782504A89642 /* CopyFiles */,
 				836D50DBD3F38B26F230BAE0 /* Sources */,
 				05656B46553D490F2A7A8B7F /* Resources */,
-				1F123D63236DAAF25E8A9C03 /* Frameworks */,
+				D2026DB2EF63F2DC7D49FD9B /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,11 +396,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D9BC21BAC5EED49D00C08E /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				5CBCC24BA8C1D6F60ACF1E3F /* [CP] Check Pods Manifest.lock */,
+				B3AEAB339C425ACB1D37EB1B /* [CP] Check Pods Manifest.lock */,
 				42013E6D41CA406CD04A704A /* Sources */,
 				EF614F5BC404B5DBA98D518D /* Resources */,
-				8B5EAF5B706C624CB09722A1 /* Frameworks */,
-				20AEDDF8CB917FBA948512DB /* [CP] Copy Pods Resources */,
+				4926F703C84108D91FA5BE49 /* Frameworks */,
+				57E8E7C0CBEAC1480C730AFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -467,7 +467,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20AEDDF8CB917FBA948512DB /* [CP] Copy Pods Resources */ = {
+		57E8E7C0CBEAC1480C730AFF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -484,7 +484,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5CBCC24BA8C1D6F60ACF1E3F /* [CP] Check Pods Manifest.lock */ = {
+		B3AEAB339C425ACB1D37EB1B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -588,7 +588,7 @@
 		};
 		212F8EB28261FEB32947A90F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C1B8C27B9ED1E991BF012A0 /* Pods-Example.debug.xcconfig */;
+			baseConfigurationReference = CEB63A47444E9ECC5CC1A857 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -607,7 +607,7 @@
 		};
 		2E3023752F42BF3C9269BD75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 673A672A236BEA61CD8B1460 /* Pods-Example.release.xcconfig */;
+			baseConfigurationReference = 80A5687A3A24B2110D35D65A /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -670,7 +670,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -731,7 +731,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.3.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
