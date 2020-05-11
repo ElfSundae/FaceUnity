@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (FUAPIDemoBar *)showSettingsPanelInView:(UIView *)view;
 - (void)hideSettingsPanelInView:(UIView *)view;
 - (nullable FUAPIDemoBar *)settingsPanelInView:(UIView *)view;
+- (nullable FUAPIDemoBar *)toggleSettingsPanelInView:(UIView *)view;
 
 @end
 

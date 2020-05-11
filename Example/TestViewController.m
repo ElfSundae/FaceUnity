@@ -25,24 +25,14 @@
 
 - (void)toggleSettingsPanel
 {
-    FUBeautyManager *manager = FUBeautyManager.sharedManager;
-    if (![manager settingsPanelInView:self.view]) {
-        [manager showSettingsPanelInView:self.view];
-        self.navigationItem.rightBarButtonItem.title = @"隐藏面板";
-    } else {
-        [manager hideSettingsPanelInView:self.view];
-        self.navigationItem.rightBarButtonItem.title = @"显示面板";
-    }
+    UIView *settingsPanel = [FUBeautyManager.sharedManager toggleSettingsPanelInView:self.view];
+    self.navigationItem.rightBarButtonItem.title = settingsPanel ? @"隐藏面板" : @"显示面板";
 }
 
 - (void)changeBeautyPreferences
 {
     FUBeautyManager *manager = FUBeautyManager.sharedManager;
-    if (manager.preferencesIdentifier) {
-        manager.preferencesIdentifier = nil;
-    } else {
-        manager.preferencesIdentifier = @"123456";
-    }
+    manager.preferencesIdentifier = manager.preferencesIdentifier ? nil : @"123456";
     NSLog(@"Beauty preferences identifier: %@", manager.preferencesIdentifier);
 
     if ([manager settingsPanelInView:self.view]) {

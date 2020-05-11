@@ -59,4 +59,14 @@ static const NSInteger SettingsPanelTag = -90008000;
     return [view viewWithTag:SettingsPanelTag];
 }
 
+- (nullable FUAPIDemoBar *)toggleSettingsPanelInView:(UIView *)view
+{
+    if (![self settingsPanelInView:view]) {
+        return [self showSettingsPanelInView:view];
+    } else {
+        [self hideSettingsPanelInView:view];
+        return nil;
+    }
+}
+
 @end
