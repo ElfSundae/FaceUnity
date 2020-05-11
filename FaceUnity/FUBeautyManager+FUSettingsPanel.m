@@ -38,22 +38,24 @@ static const NSInteger SettingsPanelTag = -90008000;
         make.height.mas_equalTo(49);
     }];
 
+    // Set data for settings panel
     [settingsPanel reloadSkinView:[FUManager shareManager].skinParams];
     [settingsPanel reloadShapView:[FUManager shareManager].shapeParams];
     [settingsPanel reloadFilterView:[FUManager shareManager].filters];
     [settingsPanel setDefaultFilter:[FUManager shareManager].seletedFliter];
 
-    //TODO: Scroll to the current filter item
-//    FUFilterView *filterView = [settingsPanel valueForKey:@"filterView"];
-//    if ([filterView isKindOfClass:[FUFilterView class]]) {
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [filterView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:filterView.selectedIndex inSection:0]
-//                               atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-//                                       animated:NO];
-//        });
-//    }
+    // Scroll to the current filter item in the filter view
+    FUFilterView *filterView = [settingsPanel valueForKey:@"beautyFilterView"];
+    if ([filterView isKindOfClass:[FUFilterView class]]) {
+        // Scrolling can only work after view displayed (layout at least once)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [filterView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:filterView.selectedIndex inSection:0]
+                               atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                       animated:NO];
+        });
+    }
 
-    // Open the "skin" section's topView by default
+    // By default, open the "skin" section's topView
     UIButton *skinButton = (UIButton *)[settingsPanel valueForKey:@"skinBtn"];
     [skinButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 
