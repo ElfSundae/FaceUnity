@@ -21,6 +21,10 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         ESSwizzleInstanceMethod(self, @selector(initWithFrame:), @selector(initWithFrame_FUFixNibLocation:));
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        ESSwizzleInstanceMethod(self, @selector(bottomBtnsSelected:), @selector(fu_bottomBtnsSelected:));
+#pragma clang diagnostic pop
     });
 }
 
@@ -32,6 +36,34 @@
 }
 
 #pragma mark - Patches
+
+- (IBAction)fu_bottomBtnsSelected:(UIButton *)sender
+{
+    [self fu_bottomBtnsSelected:sender];
+
+    // Check if the topView is shown or not
+    if (!sender.selected) {
+        return;
+    }
+
+    // Find the current shown collectionView
+    UICollectionView *collectionView = nil;
+    for (NSString *key in @[ @"skinView", @"shapeView", @"beautyFilterView" ]) {
+        UICollectionView *view = [self valueForKey:key];
+        if (view && !view.isHidden) {
+            collectionView = view;
+            break;
+        }
+    }
+
+    // Scroll to the selected item in the collectionView
+    if (collectionView) {
+        NSUInteger selectedIndex = ESUnsignedIntegerValue([collectionView valueForKey:@"selectedIndex"]);
+        [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]
+                               atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                       animated:YES];
+    }
+}
 
 #pragma mark - FUAPIDemoBarDelegate
 
