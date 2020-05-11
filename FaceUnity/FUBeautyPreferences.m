@@ -8,6 +8,7 @@
 
 #import "FUBeautyPreferences.h"
 #import <MJExtension/MJExtension.h>
+#import <ESFramework/ESFramework.h>
 #import "FUBeautyParam.h"
 
 @interface FUBeautyPreferences ()
@@ -56,6 +57,12 @@
 - (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile
 {
     return [[self mj_keyValues] writeToFile:path atomically:useAuxiliaryFile];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: %p> %@",
+            NSStringFromClass([self class]), self, [self mj_keyValues]];
 }
 
 @end

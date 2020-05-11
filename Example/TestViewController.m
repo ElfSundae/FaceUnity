@@ -33,7 +33,7 @@
 {
     FUBeautyManager *manager = FUBeautyManager.sharedManager;
     manager.preferencesIdentifier = manager.preferencesIdentifier ? nil : @"123456";
-    NSLog(@"Beauty preferences identifier: %@", manager.preferencesIdentifier);
+    self.navigationItem.title = manager.preferencesIdentifier;
 
     if ([manager settingsPanelInView:self.view]) {
         [manager hideSettingsPanelInView:self.view];

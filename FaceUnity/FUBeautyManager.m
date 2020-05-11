@@ -66,9 +66,8 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 
     FUBeautyPreferences *prefs = [FUBeautyPreferences preferencesWithContentsOfFile:self.preferencesFilePath];
 
-    // TODO: 升级 Nama 版本时兼容升级(逐一比较各个参数)本地旧版本的美颜配置
-    if (prefs && ![prefs.version isEqualToString:[FURenderer getVersion]]) {
-        prefs = nil;
+    if (prefs) {
+        [self updatePreferences:prefs];
     }
 
     if (prefs) {
@@ -78,23 +77,67 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     }
 }
 
+/**
+ * Make the given preferences up-to-date with the current Nama SDK.
+ */
+- (void)updatePreferences:(FUBeautyPreferences *)prefs
+{
+    if ([prefs.version isEqualToString:[FURenderer getVersion]]) {
+        return;
+    }
+
+    FUManager *manager = [FUManager shareManager];
+
+    prefs.version = [FURenderer getVersion];
+    prefs.skinParams = [self upgradeBeautyParams:prefs.skinParams
+                                        toParams:manager.skinParams];
+    prefs.shapeParams = [self upgradeBeautyParams:prefs.shapeParams
+                                         toParams:manager.shapeParams];
+    prefs.filters = [self upgradeBeautyParams:prefs.filters
+                                     toParams:manager.filters];
+    prefs.selectedFilter = [prefs.filters objectPassingTest:^BOOL (FUBeautyParam * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        return [obj.mParam isEqualToString:prefs.selectedFilter.mParam];
+    }] ?: manager.seletedFliter;
+
+    [self writePreferencesToFile:prefs];
+}
+
+- (NSMutableArray<FUBeautyParam *> *)upgradeBeautyParams:(NSArray<FUBeautyParam *> *)params
+                                                toParams:(NSArray<FUBeautyParam *> *)toParams
+{
+    NSMutableArray<FUBeautyParam *> *result = [NSMutableArray arrayWithCapacity:toParams.count];
+
+    for (FUBeautyParam *param in toParams) {
+        FUBeautyParam *existing = [params objectPassingTest:^BOOL (FUBeautyParam * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [obj.mParam isEqualToString:param.mParam];
+        }];
+
+        if (existing) {
+            param.mValue = existing.mValue;
+        }
+
+        [result addObject:param];
+    }
+
+    return result;
+}
+
 - (void)resetAllParamsWithPreferences:(FUBeautyPreferences *)prefs
 {
     FUManager *manager = [FUManager shareManager];
-    manager.skinParams = prefs.skinParams;
-    manager.shapeParams = prefs.shapeParams;
-    manager.filters = prefs.filters;
-    manager.seletedFliter = prefs.selectedFilter;
 
-    // Sync param values to Nama SDK (FURenderer)
+    manager.skinParams = prefs.skinParams;
     for (FUBeautyParam *param in manager.skinParams) {
         [self updateBeautyParam:param savePreferences:NO];
     }
 
+    manager.shapeParams = prefs.shapeParams;
     for (FUBeautyParam *param in manager.shapeParams) {
         [self updateBeautyParam:param savePreferences:NO];
     }
 
+    manager.filters = prefs.filters;
+    manager.seletedFliter = prefs.selectedFilter;
     [self updateFilterParam:manager.seletedFliter savePreferences:NO];
 }
 
@@ -109,9 +152,13 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     ESInvokeSelector([FUManager shareManager], @selector(setupFilterData), NULL);
 #pragma clang diagnostic pop
 
-    [self updateFilterParam:[FUManager shareManager].seletedFliter savePreferences:NO];
+    [self updateFilterParam:[FUManager shareManager].seletedFliter
+            savePreferences:NO];
 }
 
+/**
+ * Save the current preferences.
+ */
 - (void)savePreferences
 {
     FUBeautyPreferences *prefs = [FUBeautyPreferences new];
@@ -121,6 +168,11 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     prefs.filters = [FUManager shareManager].filters;
     prefs.selectedFilter = [FUManager shareManager].seletedFliter;
 
+    [self writePreferencesToFile:prefs];
+}
+
+- (void)writePreferencesToFile:(FUBeautyPreferences *)prefs
+{
     dispatch_async(self.preferencesSavingQueue, ^{
         if (self.preferencesFilePath) {
             [prefs writeToFile:self.preferencesFilePath atomically:YES];

@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<FUBeautyParam *> *skinParams;
 @property (nonatomic, strong) NSMutableArray<FUBeautyParam *> *shapeParams;
 @property (nonatomic, strong) NSMutableArray<FUBeautyParam *> *filters;
-@property (nonatomic, readonly) NSUInteger selectedFilterIndex;
 @property (nonatomic, strong) FUBeautyParam *selectedFilter;
+@property (nonatomic, readonly) NSUInteger selectedFilterIndex;
 
 + (nullable instancetype)preferencesWithContentsOfFile:(NSString *)path;
 - (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile;
