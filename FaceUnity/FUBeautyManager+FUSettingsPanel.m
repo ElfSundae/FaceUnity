@@ -9,8 +9,7 @@
 #import "FUBeautyManager.h"
 #import <Masonry/Masonry.h>
 #import "FUManager.h"
-#import "FUAPIDemoBar.h"
-#import "FUAPIDemoBar+FUAPIDemoBarDelegate.h"
+#import "FUAPIDemoBar+FUExtended.h"
 #import "FUFilterView.h"
 
 static const NSInteger SettingsPanelTag = -90008000;
