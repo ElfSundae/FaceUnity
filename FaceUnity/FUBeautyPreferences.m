@@ -48,14 +48,14 @@
     }
 }
 
-+ (nullable instancetype)preferencesWithDictionary:(NSDictionary *)dictionary
++ (nullable instancetype)preferencesWithContentsOfFile:(NSString *)path
 {
-    return [self mj_objectWithKeyValues:dictionary];
+    return [self mj_objectWithFile:path];
 }
 
-- (NSDictionary *)encodeToDictionary
+- (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile
 {
-    return [self mj_keyValues];
+    return [[self mj_keyValues] writeToFile:path atomically:useAuxiliaryFile];
 }
 
 @end

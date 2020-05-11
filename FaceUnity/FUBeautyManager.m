@@ -62,12 +62,9 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 
     NSString *filename = self.preferencesIdentifier ?: FUDefaultPreferencesFilename;
     self.preferencesFilePath = ESLibraryPath([NSString stringWithFormat:@"FaceUnity/Preferences/%@.plist", filename]);
+    [NSFileManager.defaultManager createDirectoryAtPath:[self.preferencesFilePath stringByDeletingLastPathComponent]];
 
-    FUBeautyPreferences *prefs = nil;
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:self.preferencesFilePath];
-    if (dict) {
-        prefs = [FUBeautyPreferences preferencesWithDictionary:dict];
-    }
+    FUBeautyPreferences *prefs = [FUBeautyPreferences preferencesWithContentsOfFile:self.preferencesFilePath];
 
     // TODO: 升级 Nama 版本时兼容升级(逐一比较各个参数)本地旧版本的美颜配置
     if (prefs && ![prefs.version isEqualToString:[FURenderer getVersion]]) {
@@ -125,14 +122,9 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     prefs.selectedFilter = [FUManager shareManager].seletedFliter;
 
     dispatch_async(self.preferencesSavingQueue, ^{
-        if (!self.preferencesFilePath) {
-            return;
+        if (self.preferencesFilePath) {
+            [prefs writeToFile:self.preferencesFilePath atomically:YES];
         }
-
-        [NSFileManager.defaultManager createDirectoryAtPath:
-         [self.preferencesFilePath stringByDeletingLastPathComponent]];
-
-        [[prefs encodeToDictionary] writeToFile:self.preferencesFilePath atomically:YES];
     });
 }
 

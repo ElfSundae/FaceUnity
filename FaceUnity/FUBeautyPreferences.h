@@ -21,8 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSUInteger selectedFilterIndex;
 @property (nonatomic, strong) FUBeautyParam *selectedFilter;
 
-+ (nullable instancetype)preferencesWithDictionary:(NSDictionary *)dictionary;
-- (NSDictionary *)encodeToDictionary;
++ (nullable instancetype)preferencesWithContentsOfFile:(NSString *)path;
+- (BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile;
 
 @end
 
