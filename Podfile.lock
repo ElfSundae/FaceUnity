@@ -8,14 +8,14 @@ PODS:
   - ESFramework/UIKit (3.22.1):
     - ESFramework/Foundation
     - ESFramework/Network
-  - FaceUnity (0.3.0):
-    - FaceUnity/Lite (= 0.3.0)
-  - FaceUnity/Core (0.3.0):
+  - FaceUnity (0.3.1):
+    - FaceUnity/Lite (= 0.3.1)
+  - FaceUnity/Core (0.3.1):
     - ESFramework (~> 3.20)
     - Masonry (~> 1.1)
     - MJExtension (~> 3.2)
     - SVProgressHUD (~> 2.2)
-  - FaceUnity/Lite (0.3.0):
+  - FaceUnity/Lite (0.3.1):
     - FaceUnity/Core
     - Nama-lite (= 6.7.0)
   - Masonry (1.1.0)
@@ -40,7 +40,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ESFramework: a757be349ff8a1eab5b41714f3f61716c9be7c2e
-  FaceUnity: c3807986def12cfb68a813d6e6aa7e5b12b3aab2
+  FaceUnity: 54d52d70bf09f1573aa95397e8933e672f30a71a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   Nama-lite: 58dbabb948a6d4622c94d8a83419f02fbfa65103
