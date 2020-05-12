@@ -46,23 +46,54 @@
         return;
     }
 
-    // Find the current shown collectionView
-    UICollectionView *collectionView = nil;
+    UICollectionView *collectionView = [self currentShownCollectionView];
+
+    // Scroll to the selected item if it is not fully visible in the collectionView
+    if (collectionView) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSUInteger selectedIndex = ESUnsignedIntegerValue([collectionView valueForKey:@"selectedIndex"]);
+            NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
+
+            if (![self indexPath:selectedIndexPath isFullyVisibleInCollectionView:collectionView]) {
+                [collectionView scrollToItemAtIndexPath:selectedIndexPath
+                                       atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                               animated:YES];
+            }
+        });
+    }
+}
+
+/**
+ * Get the current shown collectionView: skinView, shapeView, or beautyFilterView.
+ */
+- (nullable UICollectionView *)currentShownCollectionView
+{
     for (NSString *key in @[ @"skinView", @"shapeView", @"beautyFilterView" ]) {
         UICollectionView *view = [self valueForKey:key];
         if (view && !view.isHidden) {
-            collectionView = view;
-            break;
+            return view;
         }
     }
 
-    // Scroll to the selected item in the collectionView
-    if (collectionView) {
-        NSUInteger selectedIndex = ESUnsignedIntegerValue([collectionView valueForKey:@"selectedIndex"]);
-        [collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]
-                               atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-                                       animated:YES];
+    return nil;
+}
+
+- (BOOL)indexPath:(NSIndexPath *)indexPath isFullyVisibleInCollectionView:(UICollectionView *)collectionView
+{
+    for (UICollectionViewCell *cell in [collectionView visibleCells]) {
+        NSIndexPath *cellIndexPath = [collectionView indexPathForCell:cell];
+        if (![cellIndexPath isEqual:indexPath]) {
+            continue;
+        }
+
+        CGRect cellRect = [collectionView convertRect:cell.frame
+                                               toView:collectionView.superview];
+        if (CGRectContainsRect(collectionView.frame, cellRect)) {
+            return YES;
+        }
     }
+
+    return NO;
 }
 
 #pragma mark - FUAPIDemoBarDelegate
