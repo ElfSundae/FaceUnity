@@ -196,6 +196,8 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     // Code from -[FUBaseViewController viewDidLoad]
     /* 加载美颜道具 */
     [[FUManager shareManager] loadFilter];
+    /* 抗锯齿 */
+    [[FUManager shareManager] loadBundleWithName:@"fxaa" aboutType:FUNamaHandleTypeFxaa];
     /* 同步 */
     [[FUManager shareManager] setAsyncTrackFaceEnable:NO];
     /* 最大识别人脸数 */

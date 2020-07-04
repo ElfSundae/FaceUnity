@@ -131,6 +131,9 @@
     CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     imageW = CVPixelBufferGetWidth(pixelBuffer);
     imageH = CVPixelBufferGetHeight(pixelBuffer);
+
+    fuSetDefaultRotationMode([FUManager shareManager].deviceOrientation);
+
     [[FUManager shareManager] renderItemsToPixelBuffer:pixelBuffer];
 
     [self.renderView displayPixelBuffer:pixelBuffer];

@@ -1,37 +1,36 @@
 PODS:
-  - ESFramework (3.22.1):
-    - ESFramework/Foundation (= 3.22.1)
-    - ESFramework/Network (= 3.22.1)
-    - ESFramework/UIKit (= 3.22.1)
-  - ESFramework/Foundation (3.22.1)
-  - ESFramework/Network (3.22.1)
-  - ESFramework/UIKit (3.22.1):
+  - ESFramework (3.25.1):
+    - ESFramework/Foundation (= 3.25.1)
+    - ESFramework/Network (= 3.25.1)
+    - ESFramework/UIKit (= 3.25.1)
+  - ESFramework/Foundation (3.25.1)
+  - ESFramework/Network (3.25.1):
+    - ESFramework/Foundation
+  - ESFramework/UIKit (3.25.1):
     - ESFramework/Foundation
     - ESFramework/Network
-  - FaceUnity (0.3.1):
-    - FaceUnity/Lite (= 0.3.1)
   - FaceUnity/Core (0.3.1):
     - ESFramework (~> 3.20)
     - Masonry (~> 1.1)
     - MJExtension (~> 3.2)
     - SVProgressHUD (~> 2.2)
-  - FaceUnity/Lite (0.3.1):
+  - FaceUnity/Full (0.3.1):
     - FaceUnity/Core
-    - Nama-lite (= 6.7.0)
+    - Nama (= 7.0.0)
   - Masonry (1.1.0)
-  - MJExtension (3.2.1)
-  - Nama-lite (6.7.0)
+  - MJExtension (3.2.2)
+  - Nama (7.0.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - FaceUnity (from `.`)
+  - FaceUnity/Full (from `.`)
 
 SPEC REPOS:
   trunk:
     - ESFramework
     - Masonry
     - MJExtension
-    - Nama-lite
+    - Nama
     - SVProgressHUD
 
 EXTERNAL SOURCES:
@@ -39,13 +38,13 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  ESFramework: a757be349ff8a1eab5b41714f3f61716c9be7c2e
-  FaceUnity: 54d52d70bf09f1573aa95397e8933e672f30a71a
+  ESFramework: 4422c92a274f3f9f9a027d517ce3e26b7df3c116
+  FaceUnity: b9e2fece274e450d662b8f7f6ecc07d62c61cfa6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
-  Nama-lite: 58dbabb948a6d4622c94d8a83419f02fbfa65103
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  Nama: 8f3b155b2db9d2af1adec537533f1689467bfc36
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: d0086cdcc7711b7fc7d55025f933b94169ce2a7e
+PODFILE CHECKSUM: ae32a79a34f436255cbc064bcdcacc9c264251ca
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
