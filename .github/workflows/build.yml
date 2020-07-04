@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-cocoapods-
 
       - name: Install Dependencies
-        run: pod install --repo-update
+        run: pod install
 
       - name: Build Example Project
         run: |
