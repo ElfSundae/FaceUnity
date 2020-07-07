@@ -8,24 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Cache CocoaPods Repos
-        uses: actions/cache@v1
-        with:
-          path: ~/.cocoapods
-          key: ${{ runner.os }}-cocoapods-repos-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-cocoapods-repos-
-            ${{ runner.os }}-cocoapods-
-
-      - name: Cache CocoaPods Pods
-        uses: actions/cache@v1
-        with:
-          path: ~/Library/Caches/CocoaPods
-          key: ${{ runner.os }}-cocoapods-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-cocoapods-pods-
-            ${{ runner.os }}-cocoapods-
-
       - name: Install Dependencies
         run: pod install
 
