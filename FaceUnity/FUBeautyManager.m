@@ -66,7 +66,7 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     FUBeautyPreferences *prefs = [FUBeautyPreferences preferencesWithContentsOfFile:self.preferencesFilePath];
 
     if (prefs) {
-        [self updatePreferences:prefs];
+        [self upgradePreferences:prefs];
     }
 
     if (prefs) {
@@ -79,7 +79,7 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 /**
  * Make the given preferences up-to-date with the current Nama SDK.
  */
-- (void)updatePreferences:(FUBeautyPreferences *)prefs
+- (void)upgradePreferences:(FUBeautyPreferences *)prefs
 {
     if ([prefs.version isEqualToString:[FURenderer getVersion]]) {
         return;
@@ -225,9 +225,11 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 /// 开启屏幕旋转的检测
 - (void)startListeningDirectionOfDevice
 {
-    if (self.motionManager == nil) {
-        self.motionManager = [[CMMotionManager alloc] init];
+    if (self.motionManager) {
+        return;
     }
+
+    self.motionManager = [[CMMotionManager alloc] init];
     self.motionManager.deviceMotionUpdateInterval = 0.3;
 
     // 判断设备传感器是否可用
