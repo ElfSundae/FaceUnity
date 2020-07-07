@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Configure your authpack data.
+ * Configure the authpack data for the Nama SDK.
  */
 FOUNDATION_EXPORT void FUSetAuthData(const void *data, int length);
 
@@ -19,6 +19,10 @@ FOUNDATION_EXPORT void FUSetAuthData(const void *data, int length);
  * Retrieve your authpack data.
  */
 FOUNDATION_EXPORT void *FUGetAuthData(void);
+
+/**
+ * Retrieve your authpack data's length.
+ */
 FOUNDATION_EXPORT int FUGetAuthDataLength(void);
 
 NS_ASSUME_NONNULL_END

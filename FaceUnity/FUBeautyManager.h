@@ -15,23 +15,46 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FUBeautyManager : NSObject
 
+/**
+ * The singleton instance.
+ */
 + (instancetype)sharedManager;
 
 /**
- * The beauty preferences identifier.
+ * The identifier of the user's beauty preferences.
  */
 @property (nullable, nonatomic, copy) NSString *preferencesIdentifier;
 
 /**
- * Called before capturing: configure Nama SDK, load beauty items, load beauty
- * preferences.
+ * Prepares FaceUnity SDK for capturing.
+ * @discussion In this method, we configure the Nama SDK, load beauty items,
+ * load user's beauty preferences. You may call this method inside \c -viewDidLoad .
  */
 - (void)prepareToCapture;
+
+/**
+ * This method should be invoked when starting capturing.
+ */
 - (void)captureStarted;
+
+/**
+ * This method should be invoked when stopping capturing.
+ */
 - (void)captureStopped;
 
+/**
+ * Updates the given beauty parameter for rendering, and save the preferences.
+ */
 - (void)updateBeautyParam:(FUBeautyParam *)param;
+
+/**
+ * Updates the given filter parameter for rendering, and save the preferences.
+ */
 - (void)updateFilterParam:(FUBeautyParam *)param;
+
+/**
+ * Resets the beauty parameters for the module type.
+ */
 - (void)resetBeautyParamsForType:(FUBeautyModuleType)type;
 
 @end

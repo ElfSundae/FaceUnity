@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (demobar)
 
+/**
+ * Creates an image object with the name loaded from the FaceUnity bundle.
+ */
 + (nullable UIImage *)fu_imageWithName:(NSString *)name;
 
 @end

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSBundle (FaceUnity)
 
+/**
+ * Returns the FaceUnity bundle.
+ */
 + (nullable instancetype)fu_faceUnityBundle;
 
 @end

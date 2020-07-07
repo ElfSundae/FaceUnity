@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * Extended FUAPIDemoBar that implements \c FUAPIDemoBarDelegate delegate methods,
+ * and applies some patches like scrolling to the selected item if it is not
+ * fully visible in the collectionView.
+ */
 @interface FUAPIDemoBar (FUExtended) <FUAPIDemoBarDelegate>
 
 @end
