@@ -46,8 +46,8 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 
 - (void)setPreferencesIdentifier:(NSString *)identifier
 {
-    if (_preferencesIdentifier != identifier
-        && ![_preferencesIdentifier isEqual:identifier]) {
+    if (_preferencesIdentifier != identifier &&
+        ![_preferencesIdentifier isEqual:identifier]) {
         _preferencesIdentifier = [identifier copy];
 
         self.preferencesFilePath = nil;

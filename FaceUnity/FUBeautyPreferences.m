@@ -22,7 +22,9 @@
 + (void)load
 {
     [self mj_setupIgnoredPropertyNames:^NSArray *{
-        return @[ NSStringFromSelector(@selector(selectedFilter)) ];
+        return @[
+            NSStringFromSelector(@selector(selectedFilter))
+        ];
     }];
 
     [self mj_setupObjectClassInArray:^NSDictionary *{
