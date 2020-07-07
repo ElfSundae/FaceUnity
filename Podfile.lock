@@ -9,28 +9,30 @@ PODS:
   - ESFramework/UIKit (3.25.1):
     - ESFramework/Foundation
     - ESFramework/Network
+  - FaceUnity (0.3.1):
+    - FaceUnity/Lite (= 0.3.1)
   - FaceUnity/Core (0.3.1):
     - ESFramework (~> 3.20)
     - Masonry (~> 1.1)
     - MJExtension (~> 3.2)
     - SVProgressHUD (~> 2.2)
-  - FaceUnity/Full (0.3.1):
+  - FaceUnity/Lite (0.3.1):
     - FaceUnity/Core
-    - Nama (= 7.0.0)
+    - Nama-lite (= 7.0.0)
   - Masonry (1.1.0)
   - MJExtension (3.2.2)
-  - Nama (7.0.0)
+  - Nama-lite (7.0.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - FaceUnity/Full (from `.`)
+  - FaceUnity (from `.`)
 
 SPEC REPOS:
   trunk:
     - ESFramework
     - Masonry
     - MJExtension
-    - Nama
+    - Nama-lite
     - SVProgressHUD
 
 EXTERNAL SOURCES:
@@ -42,9 +44,9 @@ SPEC CHECKSUMS:
   FaceUnity: b9e2fece274e450d662b8f7f6ecc07d62c61cfa6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
-  Nama: 8f3b155b2db9d2af1adec537533f1689467bfc36
+  Nama-lite: 506f3fe84ecbd4a255cbe76c6d5a313878803152
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ae32a79a34f436255cbc064bcdcacc9c264251ca
+PODFILE CHECKSUM: d0086cdcc7711b7fc7d55025f933b94169ce2a7e
 
 COCOAPODS: 1.9.3
