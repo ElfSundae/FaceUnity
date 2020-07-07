@@ -35,10 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * This method should be invoked when starting capturing.
  */
-- (void)captureStarted;
+- (void)startCapturing;
 
 /**
- * This method should be invoked when stopping capturing.
+ * This method should be invoked when the capture stopped.
  */
 - (void)captureStopped;
 

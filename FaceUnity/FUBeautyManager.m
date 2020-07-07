@@ -205,7 +205,7 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
     [self loadPreferences];
 }
 
-- (void)captureStarted
+- (void)startCapturing
 {
     // Code from -[FUBaseViewController viewWillAppear:]
     /* 监听屏幕方向 */

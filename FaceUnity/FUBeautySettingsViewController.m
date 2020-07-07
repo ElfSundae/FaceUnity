@@ -60,10 +60,9 @@
 {
     [super viewWillAppear:animated];
 
+    [FUBeautyManager.sharedManager startCapturing];
     [self.mCamera startCapture];
     [self.mCamera changeSessionPreset:AVCaptureSessionPreset1280x720];
-
-    [FUBeautyManager.sharedManager captureStarted];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -72,7 +71,6 @@
 
     [self.mCamera resetFocusAndExposureModes];
     [self.mCamera stopCapture];
-
     [FUBeautyManager.sharedManager captureStopped];
 }
 
@@ -193,12 +191,14 @@
 {
     if (self.navigationController.visibleViewController == self) {
         [self.mCamera stopCapture];
+        [FUBeautyManager.sharedManager captureStopped];
     }
 }
 
 - (void)didBecomeActive
 {
     if (self.navigationController.visibleViewController == self) {
+        [FUBeautyManager.sharedManager startCapturing];
         [self.mCamera startCapture];
     }
 }
