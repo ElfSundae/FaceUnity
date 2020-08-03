@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = 'FaceUnity'
-  s.version     = '0.4.0'
+  s.version     = '0.5.0'
   s.license     = 'MIT'
   s.summary     = 'iOS face-beautification toolkit built upon FaceUnity Nama SDK and FULiveDemo.'
   s.homepage    = 'https://github.com/ElfSundae/FaceUnity'
@@ -30,13 +30,13 @@ Pod::Spec.new do |s|
     ss.source_files = 'FaceUnity/**/*.{h,m}'
 
     ss.dependency 'FaceUnity/Core'
-    ss.dependency 'Nama-lite', '7.0.0'
+    ss.dependency 'Nama-lite', '7.1.0'
   end
 
   s.subspec 'Full' do |ss|
     ss.source_files = 'FaceUnity/**/*.{h,m}'
 
     ss.dependency 'FaceUnity/Core'
-    ss.dependency 'Nama', '7.0.0'
+    ss.dependency 'Nama', '7.1.0'
   end
 end

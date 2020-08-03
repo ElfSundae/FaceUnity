@@ -63,7 +63,6 @@ SDK版本: 7.0.0
        +itmes                 //个个模块道具资源 
     +Lib                    //nama SDK  
       -authpack.h             //权限文件
-      +Resources               //资本的资源
       +libCNamaSDK.framework      
         +Headers
           -funama.h                //C 接口
