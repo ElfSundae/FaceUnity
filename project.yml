@@ -34,4 +34,5 @@ targets:
     sources: [Example]
     settings:
       ARCHS: $(ARCHS_STANDARD_64_BIT)
+      ENABLE_BITCODE: NO
       DEVELOPMENT_TEAM: B86YZY7YJX
