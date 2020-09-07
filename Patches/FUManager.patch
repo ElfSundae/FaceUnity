@@ -1,5 +1,5 @@
 diff --git a/FaceUnity/FULiveDemo/Helpers/FUManager.m b/FaceUnity/FULiveDemo/Helpers/FUManager.m
-index bceb3a58e826f6df402940753dbd0e148c56ab26..5dbc651a0db95bc2455a57a8dc68b5ec61e175bd 100755
+index ad307128aa2bd8ee713c284f1a881dcbc4afd4f8..89c2193823e61ef6a97b0808b0e718ed1bc0fd7f 100755
 --- a/FaceUnity/FULiveDemo/Helpers/FUManager.m
 +++ b/FaceUnity/FULiveDemo/Helpers/FUManager.m
 @@ -8,7 +8,7 @@
@@ -11,17 +11,17 @@ index bceb3a58e826f6df402940753dbd0e148c56ab26..5dbc651a0db95bc2455a57a8dc68b5ec
  #import "FULiveModel.h"
  #import <sys/utsname.h>
  #import <CoreMotion/CoreMotion.h>
-@@ -59,7 +59,7 @@ static FUManager *shareManager = NULL;
-         _asyncLoadQueue = dispatch_queue_create("com.faceLoadItem", DISPATCH_QUEUE_SERIAL);
-         /**这里新增了一个参数shouldCreateContext，设为YES的话，不用在外部设置context操作，我们会在内部创建并持有一个context。
-          还有设置为YES,则需要调用FURenderer.h中的接口，不能再调用funama.h中的接口。*/
+@@ -63,7 +63,7 @@ static FUManager *shareManager = NULL;
+         
+         CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
+ 
 -        [[FURenderer shareRenderer] setupWithData:nil dataSize:0 ardata:nil authPackage:&g_auth_package authSize:sizeof(g_auth_package) shouldCreateContext:YES];
 +        [[FURenderer shareRenderer] setupWithData:nil dataSize:0 ardata:nil authPackage:FUGetAuthData() authSize:FUGetAuthDataLength() shouldCreateContext:YES];
+ 
+         CFAbsoluteTime endTime = (CFAbsoluteTimeGetCurrent() - startTime);
          
-         /* 加载AI模型 */
-         [self loadAIModle];
 diff --git a/FaceUnity/FULiveDemo/Helpers/FUManager.h b/FaceUnity/FULiveDemo/Helpers/FUManager.h
-index 68e6dce3ae454b864979e179ef150f39726049fa..9e29f4569f4af861b5b12f6d7e505800489e55ab 100755
+index 7f47e48ee520156763389e99e5db694705ac312d..1d60ee0ca4ac4a50a66ecedb4715cd94f86d6b28 100755
 --- a/FaceUnity/FULiveDemo/Helpers/FUManager.h
 +++ b/FaceUnity/FULiveDemo/Helpers/FUManager.h
 @@ -9,7 +9,6 @@

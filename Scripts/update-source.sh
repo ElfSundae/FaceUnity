@@ -5,7 +5,7 @@ set -euo pipefail
 #
 
 # GIT_REF can be a tag name, branch name, or a commit SHA.
-GIT_REF=7.1.0
+GIT_REF=7.1.2
 ARCHIVE_URL="https://github.com/ElfSundae/FULiveDemo/archive/${GIT_REF}.tar.gz"
 
 WORKING=working
@@ -52,6 +52,7 @@ rsync -a "$demoSrc/Helpers" $demoDest \
     --exclude="FURenderer+header.[hm]" \
     --exclude="FUColor.[hm]" \
     --exclude="FUVolumeObserver.[hm]" \
+    --exclude="FUVideoDecoder.[hm]" \
     --exclude="FUVideoReader.[hm]" \
     --exclude="FURenderRotate.[hm]"
 rsync -a "$demoSrc/Main" $demoDest \

@@ -18,10 +18,10 @@ PODS:
     - SVProgressHUD (~> 2.2)
   - FaceUnity/Lite (0.5.0):
     - FaceUnity/Core
-    - Nama-lite (= 7.1.0)
+    - Nama-lite (= 7.1.2)
   - Masonry (1.1.0)
   - MJExtension (3.2.2)
-  - Nama-lite (7.1.0)
+  - Nama-lite (7.1.2)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -41,10 +41,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ESFramework: 4422c92a274f3f9f9a027d517ce3e26b7df3c116
-  FaceUnity: 4248f6e5ad5d108e01e881844e02ef0290a97244
+  FaceUnity: 2a7f37c906aa28e50c7d718a9879bdafd5d183e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
-  Nama-lite: 47303f6e3b7ffc3b26dd89c1e63b48491c861556
+  Nama-lite: c159bac674153b9031259db0a4ac055a960526a8
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
 PODFILE CHECKSUM: d0086cdcc7711b7fc7d55025f933b94169ce2a7e
