@@ -68,6 +68,12 @@ rsync -a "$demoSrc/Modules/Beauty" $demoDest/Modules \
     --exclude="FUBottomColletionView.[hm]" \
     --exclude="UIImage+demobar.[hm]"
 
+# Delete empty directories, e.g.
+# FaceUnity/FULiveDemo/Main/Controllers
+# FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/zh-Hans.lproj
+# FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/en.lproj
+find "$demoDest" -type d -empty -delete
+
 git apply Patches/*.patch
 
 Scripts/generate-project.sh "$@"
