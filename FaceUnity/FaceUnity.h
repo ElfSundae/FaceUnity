@@ -16,6 +16,7 @@ FOUNDATION_EXPORT const unsigned char FaceUnityVersionString[];
 #import <FaceUnity/FUBeautyManager.h>
 #import <FaceUnity/FUBeautyPreferences.h>
 #import <FaceUnity/FUBeautySettingsViewController.h>
+#import <FaceUnity/FUHelpers.h>
 #import <FaceUnity/FUCamera.h>
 #import <FaceUnity/FUImageHelper.h>
 #import <FaceUnity/FUManager.h>

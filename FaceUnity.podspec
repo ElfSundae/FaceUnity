@@ -9,14 +9,12 @@ Pod::Spec.new do |s|
   s.source      = { :git => 'https://github.com/ElfSundae/FaceUnity.git', :tag => s.version }
   s.platform    = :ios, '9.0'
 
-  s.prefix_header_contents = '#define FUNSLocalizedString(Context,comment) NSLocalizedString((Context), nil)'
-
   s.default_subspec = 'Lite'
 
   s.subspec 'Core' do |ss|
-    ss.resource = 'FaceUnity/FULiveDemo/Config/*'
+    ss.resources = 'FaceUnity/FULiveDemo/Config/*'
     ss.resource_bundle = {
-      'FaceUnity' => 'FaceUnity/**/*.{xib,xcassets}'
+      'FaceUnity' => 'FaceUnity/**/*.{xib,xcassets,lproj}'
     }
     ss.dependency 'ESFramework', '~> 3.20'
     ss.dependency 'Masonry', '~> 1.1'

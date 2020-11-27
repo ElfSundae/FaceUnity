@@ -11,8 +11,9 @@
 		0576E41D82396E134C5A067D /* FUAPIDemoBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2F6ED025E5CC565CC1DFF1 /* FUAPIDemoBar.xib */; };
 		0C08D82CEED179E7478ABD25 /* FUSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D473D505335A752A8483F7 /* FUSquareButton.m */; };
 		179CEA6BCDBBF8C2209C176E /* NSBundle+FaceUnity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ADCC28AACB17D4A91FD84348 /* NSBundle+FaceUnity.h */; };
+		1B48C54C30680F78B8F73968 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B8C5658C1D8C7509320452D /* Localizable.strings */; };
 		23099E4C930B217A2ADAEB2F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37231656C54E2AF4AC371077 /* Media.xcassets */; };
-		23C76F7DAF108756B3788080 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C90A96B7CD063687CE254D91 /* libPods-Example.a */; };
+		269401AC8C2B45C335CD0F24 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2CDFD5AB399E26F1F1E791 /* libPods-Example.a */; };
 		276CAD9FA515814B8E0629AF /* FULiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F34C6AB2E6E6E4E11A0816F /* FULiveModel.m */; };
 		3E1F67777CBB402C2D79D2AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCC1C5CD5B91869ACFEC1BA /* main.m */; };
 		3F785349E341727DF3F1C83D /* FUBeautyParam.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A033D9477AA2BF0218F70BE /* FUBeautyParam.h */; };
@@ -32,6 +33,7 @@
 		69E427EBB2FA83F9EAAFE8F1 /* FUImageHelper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22BBAC5A07D72E15FF7EFF8B /* FUImageHelper.h */; };
 		6A181E59997B7CAEBF1604DB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B376719EFE6A3C52111422F /* MainViewController.m */; };
 		6A57C5BABD209A78706AF1C5 /* FUBeautyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B874536C75635B45F37457F /* FUBeautyManager.m */; };
+		6F386C152EE4498F5EE4C060 /* FUHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = C77E99D72E889DE54D505A8F /* FUHelpers.m */; };
 		7C4D16461804B705ACD9C27B /* FUBeautyPreferences.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 993606C935186C69E87B55DA /* FUBeautyPreferences.h */; };
 		7FDAA328CCDC2B39EE96F652 /* FUSquareButton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FED2CC836F88290CECB03634 /* FUSquareButton.h */; };
 		7FF633850EB785AEF2D97EE2 /* UIImage+demobar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EBCD9D60ECCDD74F404BD93D /* UIImage+demobar.h */; };
@@ -53,6 +55,7 @@
 		C3B9AA5EB3761434F55E4F15 /* FUBeautySettingsViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E951FD418033FA412853E327 /* FUBeautySettingsViewController.h */; };
 		CB76E773B742753C604A69A6 /* FUAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F0F06C54ED6D3C6324D35EF7 /* FUAuthData.h */; };
 		CD970BFC9F5444597A527A2C /* FUAPIDemoBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C40FA7456962F6360BEB7AD3 /* FUAPIDemoBar.h */; };
+		D9FF29529128213DA19D35EA /* FUHelpers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5DF74082FEE2482F274EF9E6 /* FUHelpers.h */; };
 		DA74998CE502CA25479D5972 /* FULiveModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C6295523C84192E2F231FD1 /* FULiveModel.h */; };
 		E327C9965042B1FAE863A2DA /* FUAPIDemoBar+FUExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A97C157C3E8770A600389 /* FUAPIDemoBar+FUExtended.m */; };
 		ECBACCA23B4941D702058B61 /* FUOpenGLView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 525939AA1765A9CC5BE70056 /* FUOpenGLView.h */; };
@@ -82,6 +85,7 @@
 				B188B9BFFC0DDD0A331383B7 /* FUCamera.h in CopyFiles */,
 				4579A963803C28A610F3CFCA /* FUDemoBarDefine.h in CopyFiles */,
 				FFF04A380EF85F86709282DA /* FUFilterView.h in CopyFiles */,
+				D9FF29529128213DA19D35EA /* FUHelpers.h in CopyFiles */,
 				69E427EBB2FA83F9EAAFE8F1 /* FUImageHelper.h in CopyFiles */,
 				DA74998CE502CA25479D5972 /* FULiveModel.h in CopyFiles */,
 				41567482276C7AA064404153 /* FUManager.h in CopyFiles */,
@@ -100,7 +104,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		130E0E8F71182F8C31A8E8CF /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		06B32DC6EF9F8C9719DEE8C1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		15B3DFFB6B227562B40354F7 /* FUBeautySettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautySettingsViewController.m; sourceTree = "<group>"; };
 		1C7FC9A585AE1432E9B2AD6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FUAPIDemoBar.xib; sourceTree = "<group>"; };
 		22BBAC5A07D72E15FF7EFF8B /* FUImageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUImageHelper.h; sourceTree = "<group>"; };
@@ -111,7 +115,10 @@
 		37231656C54E2AF4AC371077 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		397B4EBE27E7D565C7DBABC1 /* libFaceUnity.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libFaceUnity.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A26CCA57EEFE42D0A33BBF9 /* FUCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUCamera.m; sourceTree = "<group>"; };
+		3AB2E99F5937B615752A4876 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		3B449898E81FCE5693332489 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B6E25B17D41DB67DC31A465 /* FUDemoBarDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUDemoBarDefine.h; sourceTree = "<group>"; };
+		3ED5108CB7E8C0D407673924 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		47B447D0A6E06952132E7904 /* FUBeautyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUBeautyView.h; sourceTree = "<group>"; };
 		4A4F38564BBAC81A9C150569 /* FURecordEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FURecordEncoder.h; sourceTree = "<group>"; };
 		4BCC1C5CD5B91869ACFEC1BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,11 +128,13 @@
 		569435E63F9EE65C8C2720E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5A033D9477AA2BF0218F70BE /* FUBeautyParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUBeautyParam.h; sourceTree = "<group>"; };
 		5B376719EFE6A3C52111422F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		5DF74082FEE2482F274EF9E6 /* FUHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUHelpers.h; sourceTree = "<group>"; };
 		61DF7EBAB426BD62C1B9AB1A /* UIColor+FUAPIDemoBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+FUAPIDemoBar.h"; sourceTree = "<group>"; };
 		67CF4FFE5D2158D299CB2A7C /* FUSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUSlider.h; sourceTree = "<group>"; };
 		6F34C6AB2E6E6E4E11A0816F /* FULiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FULiveModel.m; sourceTree = "<group>"; };
 		7D4C37E6B957C33BDCDE7178 /* dataSource.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = dataSource.plist; sourceTree = "<group>"; };
 		88D66AA8DAF7AE3B826FEA18 /* FUBeautyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyView.m; sourceTree = "<group>"; };
+		8B2CDFD5AB399E26F1F1E791 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B874536C75635B45F37457F /* FUBeautyManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyManager.m; sourceTree = "<group>"; };
 		92838819ED2EDD44EA3F432D /* FUBeautyPreferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyPreferences.m; sourceTree = "<group>"; };
 		957E39D7B6FF536C0FF874E9 /* FUFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUFilterView.h; sourceTree = "<group>"; };
@@ -148,7 +157,7 @@
 		BF1A97C157C3E8770A600389 /* FUAPIDemoBar+FUExtended.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FUAPIDemoBar+FUExtended.m"; sourceTree = "<group>"; };
 		C40FA7456962F6360BEB7AD3 /* FUAPIDemoBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUAPIDemoBar.h; sourceTree = "<group>"; };
 		C4EE104CFC32915AAC014639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C90A96B7CD063687CE254D91 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C77E99D72E889DE54D505A8F /* FUHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUHelpers.m; sourceTree = "<group>"; };
 		CCDED30B45881BA6174AAFEA /* FUAPIDemoBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUAPIDemoBar.m; sourceTree = "<group>"; };
 		D25082F05B7D08D476505A01 /* FUBeautyParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FUBeautyParam.m; sourceTree = "<group>"; };
 		D2D28C3677E054A2D07F83F6 /* NSBundle+FaceUnity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+FaceUnity.m"; sourceTree = "<group>"; };
@@ -160,22 +169,21 @@
 		EBCD9D60ECCDD74F404BD93D /* UIImage+demobar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+demobar.h"; sourceTree = "<group>"; };
 		F0F06C54ED6D3C6324D35EF7 /* FUAuthData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUAuthData.h; sourceTree = "<group>"; };
 		F0FF9CD5B62A304151F8ABB7 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		F2B65B09779CD775027E816C /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		F83AC77047175F4054514376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9F7C5583836122EDDA27046 /* Example.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED2CC836F88290CECB03634 /* FUSquareButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FUSquareButton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		83D6440D3709A7EF6B5AC021 /* Frameworks */ = {
+		635AC2313C8C9AD187311AB7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23C76F7DAF108756B3788080 /* libPods-Example.a in Frameworks */,
+				269401AC8C2B45C335CD0F24 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C238FEEAE26BA126CB0DF7FE /* Frameworks */ = {
+		77FFAFA8632CF9D569438C32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,6 +209,7 @@
 				F5C3BB30C0428B9C75CB6C59 /* Helpers */,
 				08088F0A00BCD05F72481C53 /* Main */,
 				EC117F9AB0FA191A17879650 /* Modules */,
+				3D823F842B5581BCAF2616FD /* Resources */,
 			);
 			path = FULiveDemo;
 			sourceTree = "<group>";
@@ -211,8 +220,8 @@
 				30512840D24CE5D5B9B49CBC /* Example */,
 				C559176FDA64D75472A61F25 /* FaceUnity */,
 				D2EB07C15D84123F7B130FE9 /* Products */,
-				B523CB20778A2F5E21CA369C /* Pods */,
-				D62F8F140C21146799EA2B4F /* Frameworks */,
+				E635863275E079AF744F41EC /* Pods */,
+				433B486FADD13A146F49C9EA /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -276,6 +285,22 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		3D823F842B5581BCAF2616FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2B8C5658C1D8C7509320452D /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		433B486FADD13A146F49C9EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B2CDFD5AB399E26F1F1E791 /* libPods-Example.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		591E8844E82DA34176FA58CC /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,16 +320,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B523CB20778A2F5E21CA369C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				130E0E8F71182F8C31A8E8CF /* Pods-Example.debug.xcconfig */,
-				F2B65B09779CD775027E816C /* Pods-Example.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		C559176FDA64D75472A61F25 /* FaceUnity */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +335,8 @@
 				92838819ED2EDD44EA3F432D /* FUBeautyPreferences.m */,
 				E951FD418033FA412853E327 /* FUBeautySettingsViewController.h */,
 				15B3DFFB6B227562B40354F7 /* FUBeautySettingsViewController.m */,
+				5DF74082FEE2482F274EF9E6 /* FUHelpers.h */,
+				C77E99D72E889DE54D505A8F /* FUHelpers.m */,
 				ADCC28AACB17D4A91FD84348 /* NSBundle+FaceUnity.h */,
 				D2D28C3677E054A2D07F83F6 /* NSBundle+FaceUnity.m */,
 				EBCD9D60ECCDD74F404BD93D /* UIImage+demobar.h */,
@@ -338,12 +355,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D62F8F140C21146799EA2B4F /* Frameworks */ = {
+		E635863275E079AF744F41EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C90A96B7CD063687CE254D91 /* libPods-Example.a */,
+				3ED5108CB7E8C0D407673924 /* Pods-Example.debug.xcconfig */,
+				3AB2E99F5937B615752A4876 /* Pods-Example.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		EC117F9AB0FA191A17879650 /* Modules */ = {
@@ -381,7 +400,7 @@
 				E6AA5765DB68782504A89642 /* CopyFiles */,
 				836D50DBD3F38B26F230BAE0 /* Sources */,
 				05656B46553D490F2A7A8B7F /* Resources */,
-				C238FEEAE26BA126CB0DF7FE /* Frameworks */,
+				77FFAFA8632CF9D569438C32 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,12 +415,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63D9BC21BAC5EED49D00C08E /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				39AD2F7DBAA3A12D47684C7A /* [CP] Check Pods Manifest.lock */,
+				3BD6D04DBE09D654062D2A04 /* [CP] Check Pods Manifest.lock */,
 				42013E6D41CA406CD04A704A /* Sources */,
 				EF614F5BC404B5DBA98D518D /* Resources */,
-				83D6440D3709A7EF6B5AC021 /* Frameworks */,
-				C86F2E1A313230FAD8AA00C5 /* [CP] Embed Pods Frameworks */,
-				B1C7F0C542A7A5D19DB76B5B /* [CP] Copy Pods Resources */,
+				635AC2313C8C9AD187311AB7 /* Frameworks */,
+				6A331955F4CD55F3E69F88CF /* [CP] Embed Pods Frameworks */,
+				21EA3A584AFFE447A8CF1175 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -434,6 +453,7 @@
 			knownRegions = (
 				Base,
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 10EE56FF95CC4966101AE14A;
 			productRefGroup = D2EB07C15D84123F7B130FE9 /* Products */;
@@ -452,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0576E41D82396E134C5A067D /* FUAPIDemoBar.xib in Resources */,
+				1B48C54C30680F78B8F73968 /* Localizable.strings in Resources */,
 				23099E4C930B217A2ADAEB2F /* Media.xcassets in Resources */,
 				04DFE7FEF38D5B711885B076 /* dataSource.plist in Resources */,
 			);
@@ -469,7 +490,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39AD2F7DBAA3A12D47684C7A /* [CP] Check Pods Manifest.lock */ = {
+		21EA3A584AFFE447A8CF1175 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BD6D04DBE09D654062D2A04 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,24 +529,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1C7F0C542A7A5D19DB76B5B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C86F2E1A313230FAD8AA00C5 /* [CP] Embed Pods Frameworks */ = {
+		6A331955F4CD55F3E69F88CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -554,6 +575,7 @@
 				F31B3825BB8EF933433AB738 /* FUBeautyView.m in Sources */,
 				B406E9A67C34E11C9AA9D811 /* FUCamera.m in Sources */,
 				9414E9E4FE91D9262F23048C /* FUFilterView.m in Sources */,
+				6F386C152EE4498F5EE4C060 /* FUHelpers.m in Sources */,
 				8093ED2283C3C8F27C476B2C /* FUImageHelper.m in Sources */,
 				276CAD9FA515814B8E0629AF /* FULiveModel.m in Sources */,
 				B19B4C0A4EFE3320260B6608 /* FUManager.m in Sources */,
@@ -571,6 +593,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2B8C5658C1D8C7509320452D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B449898E81FCE5693332489 /* en */,
+				06B32DC6EF9F8C9719DEE8C1 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CE870CD263054B9A34D0DC34 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -607,7 +638,7 @@
 		};
 		212F8EB28261FEB32947A90F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 130E0E8F71182F8C31A8E8CF /* Pods-Example.debug.xcconfig */;
+			baseConfigurationReference = 3ED5108CB7E8C0D407673924 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -627,7 +658,7 @@
 		};
 		2E3023752F42BF3C9269BD75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2B65B09779CD775027E816C /* Pods-Example.release.xcconfig */;
+			baseConfigurationReference = 3AB2E99F5937B615752A4876 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

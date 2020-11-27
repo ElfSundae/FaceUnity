@@ -1,0 +1,48 @@
+diff --git a/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUAPIDemoBar.m b/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUAPIDemoBar.m
+index 0c24d55e8db3be137d8cc0957760576d7b356163..818e2ce9ba5e2ebe05ff6f3226d7782e04f9559f 100644
+--- a/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUAPIDemoBar.m
++++ b/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUAPIDemoBar.m
+@@ -12,6 +12,7 @@
+ #import "FUBeautyView.h"
+ #import "FUSquareButton.h"
+ #import "FUManager.h"
++#import "FUHelpers.h"
+ 
+ 
+ @interface FUAPIDemoBar ()<FUFilterViewDelegate, FUBeautyViewDelegate>
+diff --git a/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUBeautyView.m b/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUBeautyView.m
+index f38bf74fa1a59bb31259390291c48c4c5a6fe4d7..7d6135cfb361b59f906efe3cbcd288b6436ebaae 100644
+--- a/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUBeautyView.m
++++ b/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUBeautyView.m
+@@ -9,6 +9,7 @@
+ #import "FUBeautyView.h"
+ #import "UIImage+demobar.h"
+ #import "UIColor+FUAPIDemoBar.h"
++#import "FUHelpers.h"
+ 
+ @interface FUBeautyView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+ @end
+diff --git a/FaceUnity/FULiveDemo/Helpers/FUCamera.m b/FaceUnity/FULiveDemo/Helpers/FUCamera.m
+index eb21ec856ef8cc5d03557c30c96f6f0a2cd04f30..f51ace2d9adab64927b222c8e37259922d428b26 100755
+--- a/FaceUnity/FULiveDemo/Helpers/FUCamera.m
++++ b/FaceUnity/FULiveDemo/Helpers/FUCamera.m
+@@ -10,6 +10,7 @@
+ #import <UIKit/UIKit.h>
+ #import "FURecordEncoder.h"
+ #import <SVProgressHUD/SVProgressHUD.h>
++#import "FUHelpers.h"
+ 
+ 
+ 
+diff --git a/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUFilterView.m b/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUFilterView.m
+index 03057860315a0007ae9499c6e0341b0e29cd70af..a6a60fdcffbca34e6c009c98e80a1b3dc6a01c45 100644
+--- a/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUFilterView.m
++++ b/FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUFilterView.m
+@@ -9,6 +9,7 @@
+ #import "FUFilterView.h"
+ #import "UIColor+FUAPIDemoBar.h"
+ #import "UIImage+demobar.h"
++#import "FUHelpers.h"
+ 
+ @interface FUFilterView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+ 

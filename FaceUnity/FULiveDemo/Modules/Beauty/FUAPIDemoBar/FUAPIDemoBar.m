@@ -12,6 +12,7 @@
 #import "FUBeautyView.h"
 #import "FUSquareButton.h"
 #import "FUManager.h"
+#import "FUHelpers.h"
 
 
 @interface FUAPIDemoBar ()<FUFilterViewDelegate, FUBeautyViewDelegate>
