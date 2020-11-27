@@ -46,22 +46,22 @@ echo "Updating FULiveDemo source code..."
 demoSrc="$srcRoot/FULiveDemo"
 demoDest=FaceUnity/FULiveDemo
 rm -rf $demoDest
-rsync -ar --delete "$srcRoot/docs/" Docs
-rsync -ar "$demoSrc/Config" $demoDest --exclude="*.json"
-rsync -ar "$demoSrc/Helpers" $demoDest \
+rsync -a --delete "$srcRoot/docs/" Docs
+rsync -a "$demoSrc/Config" $demoDest --exclude="*.json"
+rsync -a "$demoSrc/Helpers" $demoDest \
     --exclude="FURenderer+header.[hm]" \
     --exclude="FUColor.[hm]" \
     --exclude="FUVolumeObserver.[hm]" \
     --exclude="FUVideoDecoder.[hm]" \
     --exclude="FUVideoReader.[hm]" \
     --exclude="FURenderRotate.[hm]"
-rsync -ar "$demoSrc/Main" $demoDest \
+rsync -a "$demoSrc/Main" $demoDest \
     --include="*/" \
     --include="FULiveModel.[hm]" \
     --include="FUOpenGLView.[hm]" \
     --include="FUSquareButton.[hm]" \
     --exclude="*"
-rsync -ar "$demoSrc/Modules/Beauty" $demoDest/Modules \
+rsync -a "$demoSrc/Modules/Beauty" $demoDest/Modules \
     --exclude="*Controller.*" \
     --exclude="*.strings" \
     --exclude="FUBeautyEditView.[hm]" \
