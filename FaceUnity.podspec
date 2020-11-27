@@ -10,6 +10,8 @@ Pod::Spec.new do |s|
 
   s.static_framework = true
 
+  s.prefix_header_contents = '#define FUNSLocalizedString(Context,comment) NSLocalizedString((Context), nil)'
+
   s.default_subspec = 'Lite'
 
   s.subspec 'Core' do |ss|
@@ -30,13 +32,13 @@ Pod::Spec.new do |s|
     ss.source_files = 'FaceUnity/**/*.{h,m}'
 
     ss.dependency 'FaceUnity/Core'
-    ss.dependency 'Nama-lite', '7.1.2'
+    ss.dependency 'Nama-lite', '7.2.0'
   end
 
   s.subspec 'Full' do |ss|
     ss.source_files = 'FaceUnity/**/*.{h,m}'
 
     ss.dependency 'FaceUnity/Core'
-    ss.dependency 'Nama', '7.1.2'
+    ss.dependency 'Nama', '7.2.0'
   end
 end
