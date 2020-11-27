@@ -9,8 +9,6 @@ Pod::Spec.new do |s|
   s.source      = { :git => 'https://github.com/ElfSundae/FaceUnity.git', :tag => s.version }
   s.platform    = :ios, '9.0'
 
-  s.static_framework = true
-
   s.prefix_header_contents = '#define FUNSLocalizedString(Context,comment) NSLocalizedString((Context), nil)'
 
   s.default_subspec = 'Lite'
