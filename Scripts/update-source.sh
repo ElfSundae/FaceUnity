@@ -68,6 +68,9 @@ rsync -a "$demoSrc/Modules/Beauty" $demoDest/Modules \
     --exclude="FUBottomColletionView.[hm]" \
     --exclude="UIImage+demobar.[hm]"
 
+rsync -aR "$demoSrc"/AppSupportFiles/./*.lproj/Localizable.strings \
+    $demoDest/Resources/
+
 # Delete empty directories, e.g.
 # FaceUnity/FULiveDemo/Main/Controllers
 # FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/zh-Hans.lproj

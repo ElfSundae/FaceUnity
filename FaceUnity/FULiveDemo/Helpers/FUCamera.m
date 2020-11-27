@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "FURecordEncoder.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "FUHelpers.h"
 
 
 
