@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
   s.summary     = 'iOS face-beautification toolkit built upon FaceUnity Nama SDK and FULiveDemo.'
   s.homepage    = 'https://github.com/ElfSundae/FaceUnity'
   s.authors     = { 'Elf Sundae' => 'https://0x123.com' }
+  s.social_media_url = 'https://twitter.com/ElfSundae'
   s.source      = { :git => 'https://github.com/ElfSundae/FaceUnity.git', :tag => s.version }
   s.platform    = :ios, '9.0'
 
