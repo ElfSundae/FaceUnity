@@ -9,6 +9,8 @@ Pod::Spec.new do |s|
   s.source      = { :git => 'https://github.com/ElfSundae/FaceUnity.git', :tag => s.version }
   s.platform    = :ios, '9.0'
 
+  s.static_framework = true
+
   s.default_subspec = 'Lite'
 
   s.subspec 'Core' do |ss|
