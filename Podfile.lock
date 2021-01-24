@@ -1,12 +1,12 @@
 PODS:
-  - ESFramework (3.26.1):
-    - ESFramework/Foundation (= 3.26.1)
-    - ESFramework/Network (= 3.26.1)
-    - ESFramework/UIKit (= 3.26.1)
-  - ESFramework/Foundation (3.26.1)
-  - ESFramework/Network (3.26.1):
+  - ESFramework (3.26.2):
+    - ESFramework/Foundation (= 3.26.2)
+    - ESFramework/Network (= 3.26.2)
+    - ESFramework/UIKit (= 3.26.2)
+  - ESFramework/Foundation (3.26.2)
+  - ESFramework/Network (3.26.2):
     - ESFramework/Foundation
-  - ESFramework/UIKit (3.26.1):
+  - ESFramework/UIKit (3.26.2):
     - ESFramework/Foundation
     - ESFramework/Network
   - FaceUnity (0.6.0):
@@ -20,7 +20,7 @@ PODS:
     - FaceUnity/Core
     - Nama-lite (= 7.2.0)
   - Masonry (1.1.0)
-  - MJExtension (3.2.2)
+  - MJExtension (3.2.4)
   - Nama-lite (7.2.0)
   - SVProgressHUD (2.2.5)
 
@@ -40,13 +40,13 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  ESFramework: 68d5509ec8260b22acd73caccc7a162147b7895c
+  ESFramework: c2b035785af59f7ec0386dc03a4fe283f7bac9fe
   FaceUnity: f321598477807f13a67548cc59b53b9ecef682b2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   Nama-lite: d8360f335cb5c3a47073651b730d0f6ebdbcbf6f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
 PODFILE CHECKSUM: d0086cdcc7711b7fc7d55025f933b94169ce2a7e
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1
