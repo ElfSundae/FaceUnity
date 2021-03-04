@@ -12,7 +12,7 @@
 #import "FUBeautyView.h"
 #import "FUSquareButton.h"
 #import "FUManager.h"
-#import <SVProgressHUD.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 #import "FUHelpers.h"
 
 @interface FUAPIDemoBar ()<FUFilterViewDelegate, FUBeautyViewDelegate>

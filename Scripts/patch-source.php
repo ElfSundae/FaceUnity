@@ -1,52 +1,101 @@
 #!/usr/bin/env php
 <?php
 
-function fullpath($file)
+function file_path($file)
 {
-    return realpath(__DIR__.'/../'.$file);
+    return file_exists($file) ? $file : realpath(__DIR__.'/../'.$file);
 }
 
-function append_after_import($file, $append)
+function process_file($file, $callback)
 {
-    $content = file_get_contents($file = fullpath($file));
-
-    if (strpos($content, $append) !== false) {
-        return;
-    }
-
-    $content = preg_replace(
-        '/(#import\s+[^\s]+(\r?\n))(\r?\n)/',
-        '${1}'.$append.'${2}${3}',
-        $content,
-        1
-    );
-
-    if ($content) {
-        file_put_contents($file, $content);
+    if ($content = file_get_contents($file = file_path($file))) {
+        if ($newContent = $callback($content, $file)) {
+            if ($newContent != $content) {
+                file_put_contents($file, $newContent);
+            }
+        }
     }
 }
 
 function remove_lines($file, $lines)
 {
-    $content = file_get_contents($file = fullpath($file));
+    $lines = (array) $lines;
+    process_file($file, function ($content) use ($lines) {
+        foreach ($lines as $text) {
+            $content = preg_replace('/'.preg_quote($text, '/').'\r?\n/', '', $content);
+        }
 
-    foreach ((array) $lines as $text) {
-        $content = preg_replace('/'.preg_quote($text, '/').'\r?\n/', '', $content);
-    }
-
-    if ($content) {
-        file_put_contents($file, $content);
-    }
+        return $content;
+    });
 }
 
 function replace_text($file, $search, $replace)
 {
-    $content = file_get_contents($file = fullpath($file));
-    $content = str_replace($search, $replace, $content);
-    file_put_contents($file, $content);
+    process_file($file, function ($content) use ($search, $replace) {
+        return str_replace($search, $replace, $content);
+    });
 }
 
-// Append `#import "FUHelpers.h"` to import `FUNSLocalizedString()` function.
+function append_after_import($file, $append)
+{
+    process_file($file, function ($content) use ($append) {
+        if (strpos($content, $append) !== false) {
+            return;
+        }
+
+        return preg_replace(
+            '/(#import\s+[^\s]+(\r?\n))(\r?\n)/',
+            '${1}'.$append.'${2}${3}',
+            $content,
+            1
+        );
+    });
+}
+
+// Remove unnecessary `#import`
+foreach ([
+    'FaceUnity/FULiveDemo/Helpers/FUManager.h' => '#import "FURenderer.h"',
+    'FaceUnity/FULiveDemo/Helpers/FUManager.m' => '#import "FURenderer+header.h"',
+    'FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUAPIDemoBar.m' => [
+        '#import "MJExtension.h"',
+        '#import "FUMakeupSupModel.h"',
+    ],
+] as $file => $removes) {
+    remove_lines($file, $removes);
+}
+
+// Add prefix `fu_` for category methods: https://github.com/Faceunity/FULiveDemo/pull/45
+// Fix #import for third packages
+foreach (
+    glob(file_path('FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar').'/*.[hm]')
+    as $file
+) {
+    replace_text($file, [
+        'colorWithHexColorString:',
+        'imageWithName:',
+        '#import <SVProgressHUD.h>',
+    ], [
+        'fu_colorWithHexColorString:',
+        'fu_imageWithName:',
+        '#import <SVProgressHUD/SVProgressHUD.h>',
+    ]);
+}
+
+// Use FUAuthData class instead of authpack.h
+replace_text(
+    'FaceUnity/FULiveDemo/Helpers/FUManager.m',
+    [
+        '#import "authpack.h"',
+        ' authPackage:&g_auth_package authSize:sizeof(g_auth_package) ',
+    ],
+    [
+        '#import "FUAuthData.h"',
+        ' authPackage:FUGetAuthData() authSize:FUGetAuthDataLength() ',
+    ]
+);
+
+// Append `#import "FUHelpers.h"` to import `FUNSLocalizedString()` function
+// which originally defined in PrefixHeader.pch
 foreach ([
     'FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/FUAPIDemoBar.m',
     'FaceUnity/FULiveDemo/Helpers/FUCamera.m',
@@ -55,22 +104,3 @@ foreach ([
 ] as $file) {
     append_after_import($file, '#import "FUHelpers.h"');
 }
-
-// Remove unnecessary #import in the .h files
-foreach ([
-    'FaceUnity/FULiveDemo/Helpers/FUManager.h' => '#import "FURenderer.h"',
-] as $file => $removes) {
-    remove_lines($file, $removes);
-}
-
-replace_text(
-    'FaceUnity/FULiveDemo/Helpers/FUManager.m',
-    [
-        '#import "authpack.h"',
-        '[[FURenderer shareRenderer] setupWithData:nil dataSize:0 ardata:nil authPackage:&g_auth_package authSize:sizeof(g_auth_package) shouldCreateContext:YES];',
-    ],
-    [
-        '#import "FUAuthData.h"',
-        '[[FURenderer shareRenderer] setupWithData:nil dataSize:0 ardata:nil authPackage:FUGetAuthData() authSize:FUGetAuthDataLength() shouldCreateContext:YES];',
-    ]
-);
