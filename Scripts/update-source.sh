@@ -77,6 +77,6 @@ rsync -aR "$demoSrc"/AppSupportFiles/./*.lproj/Localizable.strings \
 # FaceUnity/FULiveDemo/Modules/Beauty/FUAPIDemoBar/en.lproj
 find "$demoDest" -type d -empty -delete
 
-git apply Patches/*.patch
+php Scripts/patch-source.php
 
 Scripts/generate-project.sh "$@"
