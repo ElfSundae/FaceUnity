@@ -5,7 +5,7 @@ set -euo pipefail
 #
 
 # GIT_REF can be a tag name, branch name, or a commit SHA.
-GIT_REF=7.2.0
+GIT_REF=7.3.2
 ARCHIVE_URL="https://github.com/ElfSundae/FULiveDemo/archive/${GIT_REF}.tar.gz"
 
 WORKING=working

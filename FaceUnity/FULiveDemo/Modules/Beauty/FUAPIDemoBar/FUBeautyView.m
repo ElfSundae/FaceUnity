@@ -54,12 +54,24 @@
             BOOL selected = _selectedIndex == indexPath.row ;
             
             if (selected) {
+                imageName = opened ? [FUNSLocalizedString(modle.mTitle, nil) stringByAppendingString:@"-3.png"] : [FUNSLocalizedString(modle.mTitle, nil) stringByAppendingString:@"-2.png"] ;
+            }else {
+                imageName = opened ? [FUNSLocalizedString(modle.mTitle, nil) stringByAppendingString:@"-1.png"] : [FUNSLocalizedString(modle.mTitle, nil) stringByAppendingString:@"-0.png"] ;
+            }
+        
+        /* 英文icon 未找到 */
+        UIImage *imageIcon = [UIImage fu_imageWithName:imageName];
+        if (imageIcon == nil) {
+            if (selected) {
                 imageName = opened ? [modle.mTitle stringByAppendingString:@"-3.png"] : [modle.mTitle stringByAppendingString:@"-2.png"] ;
             }else {
                 imageName = opened ? [modle.mTitle stringByAppendingString:@"-1.png"] : [modle.mTitle stringByAppendingString:@"-0.png"] ;
             }
+            imageIcon = [UIImage fu_imageWithName:imageName];
+        }
 
-        cell.imageView.image = [UIImage fu_imageWithName:imageName];
+
+        cell.imageView.image = imageIcon;
         cell.titleLabel.text = FUNSLocalizedString(modle.mTitle,nil);
         cell.titleLabel.textColor = _selectedIndex == indexPath.row ? [UIColor fu_colorWithHexColorString:@"5EC7FE"] : [UIColor whiteColor];
     }
