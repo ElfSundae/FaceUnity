@@ -40,6 +40,7 @@ static const NSInteger SettingsPanelTag = -90008000;
     [settingsPanel reloadSkinView:[FUManager shareManager].skinParams];
     [settingsPanel reloadShapView:[FUManager shareManager].shapeParams];
     [settingsPanel reloadFilterView:[FUManager shareManager].filters];
+    [settingsPanel reloadStyleView:[FUManager shareManager].styleParams defaultStyle:[FUManager shareManager].currentStyle];
     [settingsPanel setDefaultFilter:[FUManager shareManager].seletedFliter];
 
     // By default, open the "skin" section's topView
