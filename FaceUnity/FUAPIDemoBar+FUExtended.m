@@ -68,7 +68,7 @@
  */
 - (nullable UICollectionView *)currentShownCollectionView
 {
-    for (NSString *key in @[ @"skinView", @"shapeView", @"beautyFilterView" ]) {
+    for (NSString *key in @[ @"skinView", @"shapeView", @"beautyFilterView", @"mStyleView" ]) {
         UICollectionView *view = [self valueForKey:key];
         if (view && !view.isHidden) {
             return view;
@@ -104,6 +104,18 @@
 
 - (void)beautyParamValueChange:(FUBeautyParam *)param
 {
+    if (self.selBottomIndex == 3) {//风格栏
+        if (param.beautyAllparams) {
+            [[FUManager shareManager] setStyleBeautyParams:param.beautyAllparams];
+            [FUManager shareManager].currentStyle = param;
+        }else{// 点击无
+            [FUManager shareManager].currentStyle = param;
+            [[FUManager shareManager] setBeautyParameters];
+        }
+
+        return;
+    }
+
     [FUBeautyManager.sharedManager updateBeautyParam:param];
 }
 

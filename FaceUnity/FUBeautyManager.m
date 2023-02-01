@@ -300,6 +300,18 @@ static const char *FUPreferencesSavingQueueLabel = "com.0x123.FUBeautyManager.pr
 - (void)updateBeautyParam:(FUBeautyParam *)param savePreferences:(BOOL)save
 {
     // Code from -[FUBeautyController beautyParamValueChange:]
+//    if (_demoBar.selBottomIndex == 3) {//风格栏
+//        if (param.beautyAllparams) {
+//            [[FUManager shareManager] setStyleBeautyParams:param.beautyAllparams];
+//            [FUManager shareManager].currentStyle = param;
+//        }else{// 点击无
+//            [FUManager shareManager].currentStyle = param;
+//            [[FUManager shareManager] setBeautyParameters];
+//        }
+//
+//        return;
+//    }
+
     if ([param.mParam isEqualToString:@"cheek_narrow"] || [param.mParam isEqualToString:@"cheek_small"]) {//程度值 只去一半
         [[FUManager shareManager] setParamItemAboutType:FUNamaHandleTypeBeauty name:param.mParam value:param.mValue * 0.5];
     } else if ([param.mParam isEqualToString:@"blur_level"]) {//磨皮 0~6
